@@ -1,32 +1,63 @@
 <html>
 
 <head>
-  <!-- CSS Imports -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" integrity="sha256-YR4HrDE479EpYZgeTkQfgVJq08+277UXxMLbi/YP69o=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/style.css" />
+
+<title>SEPTA Rail Stations</title>
+
 </head>
+<body>
 
 <body>
 
   <!--Left Panel-->
   <div id="sidebar">
-    <div id="sidebarcontent">THIS IS THE SIDEBAR</div>
+    <div id='loading' class="alert alert-warning">Please wait while we load data.<br>This might take a few minutes.</div>
+
+    <div id="sidebarcontent">
+
+
+    <div id='railselector'>Show Stations on:<br>
+        <input type="checkbox" id="mfl_select" checked='checked'> Market-Frankford Line<br>
+        <input type="checkbox" id="bsl_select" checked='checked'> Broad Street Line<br>
+        <input type="checkbox" id="nhsl_select" checked='checked'> Norristown High-Speed Line<br>
+        <input type="checkbox" id="rr_select" checked='checked'> Regional Rail Lines<br>
+    </div>
+
+    <button id='plotrail'>Plot Rail Lines and Stations</button><br>
+
+    <div id='selectionzone'>
+      <select id='mode'>
+        <option value="walk">Walking</option>
+        <option value="bike">Biking</option>
+        <option value="dis">x100 Feet Distance</option>
+      </select>
+    </div>
+    <br>
+    <div>
+      Select Your Connection Mode and Time:<br>
+    </div>
+    <div class="slidecontainer">
+      <input type="range" min="1" max="30" value="10" class="slider" id="myRange">
+    </div>
 
   </div>
 
 
   <!-- Map -->
-  <div id="map" style="position: absolute; right: 0; left: 400px; top: 0; bottom: 0;"></div>
+  <div id='map' style="position: absolute; right: 0; left: 400px; top: 0; bottom: 0;"></div>
 
+  <!--CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <!-- Javascript Imports -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js" integrity="sha256-CNm+7c26DTTCGRQkM9vp7aP85kHFMqs9MhPEuytF+fQ=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="js/jquery.js"></script>
   <!-- Javascript Imports -->
   <script src="js/variables.js"></script>
+  <script src='js/function.js'></script>
   <script src="js/main.js"></script>
 </body>
 
