@@ -1,23 +1,30 @@
 // Set up map
 var map = L.map('map', {
-  center: [40.012663, -75.407016],
-  zoom: 10.2
+  center: [ 39.953337, -75.177357],
+  zoom: 12.65
 });
 
-var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
-	minZoom: 1,
-	maxZoom: 16,
-	ext: 'jpg'
+	maxZoom: 19
 }).addTo(map);
 
 // This function builds the page
 var main = function() {
+  MFL_Line_Layer = L.geoJSON(MFL_Line, {style: MFLLStyle});
+  BSL_Line_Layer = L.geoJSON(BSL_Line, {style: BSLLStyle});
+  NHSL_Line_Layer = L.geoJSON(NHSL_Line, {style: NHSLLStyle});
+  RR_Line_Layer = L.geoJSON(RR_Line, {style: RRLStyle});
 
-  $('#plotrail').click(function() {
-    railselection();
-  });
+  MFL_Station_Layer = L.geoJSON(MFL_Station, {icon:MFL_Station_Icon});
+
+  MFL_Line_Layer.addTo(map);
+  BSL_Line_Layer.addTo(map);
+  NHSL_Line_Layer.addTo(map);
+  RR_Line_Layer.addTo(map);
+
+  MFL_Station_Layer.addTo(map);
 
 
 };

@@ -1,23 +1,327 @@
 {
-  "type" : "FeatureCollection",
-  "crs" : {
-    "type" : "name",
-    "properties" : {
-      "name" : "EPSG:4326"
-    }
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "FID" : "FID",
+    "OBJECTID" : "OBJECTID",
+    "Route" : "Route",
+    "Station" : "Station",
+    "Stop_ID" : "Stop_ID",
+    "On_Street" : "On_Street",
+    "At_Street" : "At_Street",
+    "Street_Add" : "Street_Add",
+    "City" : "City",
+    "State" : "State",
+    "Zip" : "Zip",
+    "County" : "County",
+    "Municipali" : "Municipali",
+    "Owner" : "Owner",
+    "Average_We" : "Average_We",
+    "Average_Sa" : "Average_Sa",
+    "Average_Su" : "Average_Su",
+    "Ticket_Off" : "Ticket_Off",
+    "Handicap_A" : "Handicap_A",
+    "Parking_Av" : "Parking_Av",
+    "Number_of_" : "Number_of_",
+    "Number_o_1" : "Number_o_1",
+    "Taxi_Stand" : "Taxi_Stand",
+    "Platform_T" : "Platform_T",
+    "Station_Bu" : "Station_Bu",
+    "Shelter" : "Shelter",
+    "Bench" : "Bench",
+    "Elevator" : "Elevator",
+    "Escaltor" : "Escaltor",
+    "Lighting" : "Lighting",
+    "Restroom" : "Restroom",
+    "Trash_Rece" : "Trash_Rece",
+    "Recycling_" : "Recycling_",
+    "Map" : "Map",
+    "Fare_Infor" : "Fare_Infor",
+    "Schedule_I" : "Schedule_I",
+    "Minority_A" : "Minority_A",
+    "Low_Income" : "Low_Income",
+    "Minority__" : "Minority__",
+    "PA_State_S" : "PA_State_S",
+    "PA_State_H" : "PA_State_H",
+    "PA_U_S__Co" : "PA_U_S__Co",
+    "Philadelph" : "Philadelph",
+    "Latitude" : "Latitude",
+    "Longitude" : "Longitude",
+    "GlobalID" : "GlobalID"
   },
+  "geometryType" : "esriGeometryPoint",
+  "spatialReference" : {
+    "wkid" : 4326,
+    "latestWkid" : 4326
+  },
+  "fields" : [
+    {
+      "name" : "FID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "FID"
+    },
+    {
+      "name" : "OBJECTID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "OBJECTID"
+    },
+    {
+      "name" : "Route",
+      "type" : "esriFieldTypeString",
+      "alias" : "Route",
+      "length" : 80
+    },
+    {
+      "name" : "Station",
+      "type" : "esriFieldTypeString",
+      "alias" : "Station",
+      "length" : 80
+    },
+    {
+      "name" : "Stop_ID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Stop_ID"
+    },
+    {
+      "name" : "On_Street",
+      "type" : "esriFieldTypeString",
+      "alias" : "On_Street",
+      "length" : 80
+    },
+    {
+      "name" : "At_Street",
+      "type" : "esriFieldTypeString",
+      "alias" : "At_Street",
+      "length" : 80
+    },
+    {
+      "name" : "Street_Add",
+      "type" : "esriFieldTypeString",
+      "alias" : "Street_Add",
+      "length" : 80
+    },
+    {
+      "name" : "City",
+      "type" : "esriFieldTypeString",
+      "alias" : "City",
+      "length" : 80
+    },
+    {
+      "name" : "State",
+      "type" : "esriFieldTypeString",
+      "alias" : "State",
+      "length" : 80
+    },
+    {
+      "name" : "Zip",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Zip"
+    },
+    {
+      "name" : "County",
+      "type" : "esriFieldTypeString",
+      "alias" : "County",
+      "length" : 80
+    },
+    {
+      "name" : "Municipali",
+      "type" : "esriFieldTypeString",
+      "alias" : "Municipali",
+      "length" : 80
+    },
+    {
+      "name" : "Owner",
+      "type" : "esriFieldTypeString",
+      "alias" : "Owner",
+      "length" : 80
+    },
+    {
+      "name" : "Average_We",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Average_We"
+    },
+    {
+      "name" : "Average_Sa",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Average_Sa"
+    },
+    {
+      "name" : "Average_Su",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Average_Su"
+    },
+    {
+      "name" : "Ticket_Off",
+      "type" : "esriFieldTypeString",
+      "alias" : "Ticket_Off",
+      "length" : 80
+    },
+    {
+      "name" : "Handicap_A",
+      "type" : "esriFieldTypeString",
+      "alias" : "Handicap_A",
+      "length" : 80
+    },
+    {
+      "name" : "Parking_Av",
+      "type" : "esriFieldTypeString",
+      "alias" : "Parking_Av",
+      "length" : 80
+    },
+    {
+      "name" : "Number_of_",
+      "type" : "esriFieldTypeString",
+      "alias" : "Number_of_",
+      "length" : 80
+    },
+    {
+      "name" : "Number_o_1",
+      "type" : "esriFieldTypeString",
+      "alias" : "Number_o_1",
+      "length" : 80
+    },
+    {
+      "name" : "Taxi_Stand",
+      "type" : "esriFieldTypeString",
+      "alias" : "Taxi_Stand",
+      "length" : 80
+    },
+    {
+      "name" : "Platform_T",
+      "type" : "esriFieldTypeString",
+      "alias" : "Platform_T",
+      "length" : 80
+    },
+    {
+      "name" : "Station_Bu",
+      "type" : "esriFieldTypeString",
+      "alias" : "Station_Bu",
+      "length" : 80
+    },
+    {
+      "name" : "Shelter",
+      "type" : "esriFieldTypeString",
+      "alias" : "Shelter",
+      "length" : 80
+    },
+    {
+      "name" : "Bench",
+      "type" : "esriFieldTypeString",
+      "alias" : "Bench",
+      "length" : 80
+    },
+    {
+      "name" : "Elevator",
+      "type" : "esriFieldTypeString",
+      "alias" : "Elevator",
+      "length" : 80
+    },
+    {
+      "name" : "Escaltor",
+      "type" : "esriFieldTypeString",
+      "alias" : "Escaltor",
+      "length" : 80
+    },
+    {
+      "name" : "Lighting",
+      "type" : "esriFieldTypeString",
+      "alias" : "Lighting",
+      "length" : 80
+    },
+    {
+      "name" : "Restroom",
+      "type" : "esriFieldTypeString",
+      "alias" : "Restroom",
+      "length" : 80
+    },
+    {
+      "name" : "Trash_Rece",
+      "type" : "esriFieldTypeString",
+      "alias" : "Trash_Rece",
+      "length" : 80
+    },
+    {
+      "name" : "Recycling_",
+      "type" : "esriFieldTypeString",
+      "alias" : "Recycling_",
+      "length" : 80
+    },
+    {
+      "name" : "Map",
+      "type" : "esriFieldTypeString",
+      "alias" : "Map",
+      "length" : 80
+    },
+    {
+      "name" : "Fare_Infor",
+      "type" : "esriFieldTypeString",
+      "alias" : "Fare_Infor",
+      "length" : 80
+    },
+    {
+      "name" : "Schedule_I",
+      "type" : "esriFieldTypeString",
+      "alias" : "Schedule_I",
+      "length" : 80
+    },
+    {
+      "name" : "Minority_A",
+      "type" : "esriFieldTypeString",
+      "alias" : "Minority_A",
+      "length" : 80
+    },
+    {
+      "name" : "Low_Income",
+      "type" : "esriFieldTypeString",
+      "alias" : "Low_Income",
+      "length" : 80
+    },
+    {
+      "name" : "Minority__",
+      "type" : "esriFieldTypeString",
+      "alias" : "Minority__",
+      "length" : 80
+    },
+    {
+      "name" : "PA_State_S",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "PA_State_S"
+    },
+    {
+      "name" : "PA_State_H",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "PA_State_H"
+    },
+    {
+      "name" : "PA_U_S__Co",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "PA_U_S__Co"
+    },
+    {
+      "name" : "Philadelph",
+      "type" : "esriFieldTypeString",
+      "alias" : "Philadelph",
+      "length" : 80
+    },
+    {
+      "name" : "Latitude",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Latitude"
+    },
+    {
+      "name" : "Longitude",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Longitude"
+    },
+    {
+      "name" : "GlobalID",
+      "type" : "esriFieldTypeString",
+      "alias" : "GlobalID",
+      "length" : 80
+    }
+  ],
   "features" : [
     {
-      "type" : "Feature",
-      "id" : 0,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.259726999999941,
-          39.962605000000053
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 0,
         "OBJECTID" : 1,
         "Route" : "Market-Frankford Line",
@@ -64,19 +368,14 @@
         "Latitude" : 39.962605000000003,
         "Longitude" : -75.259726999999998,
         "GlobalID" : "e15f74c4-792a-48c2-a420-a567d6274bc9"
+      },
+      "geometry" : {
+        "x" : -75.259726999999941,
+        "y" : 39.962605000000053
       }
     },
     {
-      "type" : "Feature",
-      "id" : 1,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.252400999999963,
-          39.96442600000006
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 1,
         "OBJECTID" : 2,
         "Route" : "Market-Frankford Line",
@@ -123,19 +422,14 @@
         "Latitude" : 39.964426000000003,
         "Longitude" : -75.252401000000006,
         "GlobalID" : "d2c03245-39b8-48a2-986b-a52946b89f9e"
+      },
+      "geometry" : {
+        "x" : -75.252400999999963,
+        "y" : 39.96442600000006
       }
     },
     {
-      "type" : "Feature",
-      "id" : 2,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.246755999999948,
-          39.962708000000077
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 2,
         "OBJECTID" : 3,
         "Route" : "Market-Frankford Line",
@@ -182,19 +476,14 @@
         "Latitude" : 39.962707999999999,
         "Longitude" : -75.246756000000005,
         "GlobalID" : "f354b148-d807-4802-afc0-ce799358652d"
+      },
+      "geometry" : {
+        "x" : -75.246755999999948,
+        "y" : 39.962708000000077
       }
     },
     {
-      "type" : "Feature",
-      "id" : 3,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.240728999999988,
-          39.961966000000075
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 3,
         "OBJECTID" : 4,
         "Route" : "Market-Frankford Line",
@@ -241,19 +530,14 @@
         "Latitude" : 39.961965999999997,
         "Longitude" : -75.240729000000002,
         "GlobalID" : "55ab311d-74f6-4e90-99c4-6080269ee7d3"
+      },
+      "geometry" : {
+        "x" : -75.240728999999988,
+        "y" : 39.961966000000075
       }
     },
     {
-      "type" : "Feature",
-      "id" : 4,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.232839999999953,
-          39.96099300000003
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 4,
         "OBJECTID" : 5,
         "Route" : "Market-Frankford Line",
@@ -300,19 +584,14 @@
         "Latitude" : 39.960993000000002,
         "Longitude" : -75.232839999999996,
         "GlobalID" : "c766dade-4be2-43ea-b5eb-17bcbe7a7ae3"
+      },
+      "geometry" : {
+        "x" : -75.232839999999953,
+        "y" : 39.96099300000003
       }
     },
     {
-      "type" : "Feature",
-      "id" : 5,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.224876999999935,
-          39.960005000000081
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 5,
         "OBJECTID" : 6,
         "Route" : "Market-Frankford Line",
@@ -359,19 +638,14 @@
         "Latitude" : 39.960005000000002,
         "Longitude" : -75.224877000000006,
         "GlobalID" : "d52c717c-e007-4659-91e3-4fa86dbb6fca"
+      },
+      "geometry" : {
+        "x" : -75.224876999999935,
+        "y" : 39.960005000000081
       }
     },
     {
-      "type" : "Feature",
-      "id" : 6,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.214008999999976,
-          39.958652000000029
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 6,
         "OBJECTID" : 7,
         "Route" : "Market-Frankford Line",
@@ -418,19 +692,14 @@
         "Latitude" : 39.958652000000001,
         "Longitude" : -75.214009000000004,
         "GlobalID" : "60df8221-941f-43ac-b584-aa9727705d37"
+      },
+      "geometry" : {
+        "x" : -75.214008999999976,
+        "y" : 39.958652000000029
       }
     },
     {
-      "type" : "Feature",
-      "id" : 7,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.201955999999939,
-          39.957156000000055
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 7,
         "OBJECTID" : 8,
         "Route" : "Market-Frankford Line",
@@ -477,19 +746,14 @@
         "Latitude" : 39.957155999999998,
         "Longitude" : -75.201955999999996,
         "GlobalID" : "fc258de9-63f8-48e5-9a17-9188e3dc8041"
+      },
+      "geometry" : {
+        "x" : -75.201955999999939,
+        "y" : 39.957156000000055
       }
     },
     {
-      "type" : "Feature",
-      "id" : 8,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.191461999999945,
-          39.95584400000007
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 8,
         "OBJECTID" : 9,
         "Route" : "Market-Frankford Line",
@@ -536,19 +800,14 @@
         "Latitude" : 39.955843999999999,
         "Longitude" : -75.191462000000001,
         "GlobalID" : "ff90e8ee-941f-430d-b4ea-3c2e1351259a"
+      },
+      "geometry" : {
+        "x" : -75.191461999999945,
+        "y" : 39.95584400000007
       }
     },
     {
-      "type" : "Feature",
-      "id" : 9,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.183276999999975,
-          39.954837000000055
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 9,
         "OBJECTID" : 10,
         "Route" : "Market-Frankford Line",
@@ -595,19 +854,14 @@
         "Latitude" : 39.954836999999998,
         "Longitude" : -75.183277000000004,
         "GlobalID" : "e757ee37-07f3-4fc7-8752-7199a53f9372"
+      },
+      "geometry" : {
+        "x" : -75.183276999999975,
+        "y" : 39.954837000000055
       }
     },
     {
-      "type" : "Feature",
-      "id" : 10,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.165255999999943,
-          39.952581000000066
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 10,
         "OBJECTID" : 11,
         "Route" : "Market-Frankford Line",
@@ -654,19 +908,14 @@
         "Latitude" : 39.952581000000002,
         "Longitude" : -75.165255999999999,
         "GlobalID" : "98078f6c-22e5-483a-bc84-9f45dff5392a"
+      },
+      "geometry" : {
+        "x" : -75.165255999999943,
+        "y" : 39.952581000000066
       }
     },
     {
-      "type" : "Feature",
-      "id" : 11,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.16145199999994,
-          39.952103000000079
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 11,
         "OBJECTID" : 12,
         "Route" : "Market-Frankford Line",
@@ -713,19 +962,14 @@
         "Latitude" : 39.952103000000001,
         "Longitude" : -75.161451999999997,
         "GlobalID" : "03ae0919-5062-4e86-a654-9f3259c9860e"
+      },
+      "geometry" : {
+        "x" : -75.16145199999994,
+        "y" : 39.952103000000079
       }
     },
     {
-      "type" : "Feature",
-      "id" : 12,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.158315999999957,
-          39.951716000000033
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 12,
         "OBJECTID" : 13,
         "Route" : "Market-Frankford Line",
@@ -772,19 +1016,14 @@
         "Latitude" : 39.951715999999998,
         "Longitude" : -75.158315999999999,
         "GlobalID" : "1a7a689c-454e-47a0-8297-b315f825da10"
+      },
+      "geometry" : {
+        "x" : -75.158315999999957,
+        "y" : 39.951716000000033
       }
     },
     {
-      "type" : "Feature",
-      "id" : 13,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.153576999999984,
-          39.951127000000042
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 13,
         "OBJECTID" : 14,
         "Route" : "Market-Frankford Line",
@@ -831,19 +1070,14 @@
         "Latitude" : 39.951127,
         "Longitude" : -75.153576999999999,
         "GlobalID" : "d8e762ee-8543-4e03-8250-05805384e76f"
+      },
+      "geometry" : {
+        "x" : -75.153576999999984,
+        "y" : 39.951127000000042
       }
     },
     {
-      "type" : "Feature",
-      "id" : 14,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.148904999999957,
-          39.950554000000068
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 14,
         "OBJECTID" : 15,
         "Route" : "Market-Frankford Line",
@@ -890,19 +1124,14 @@
         "Latitude" : 39.950553999999997,
         "Longitude" : -75.148904999999999,
         "GlobalID" : "5ba7c62c-3b3d-4d57-9936-712b61722522"
+      },
+      "geometry" : {
+        "x" : -75.148904999999957,
+        "y" : 39.950554000000068
       }
     },
     {
-      "type" : "Feature",
-      "id" : 15,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.143754999999942,
-          39.949889000000042
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 15,
         "OBJECTID" : 16,
         "Route" : "Market-Frankford Line",
@@ -949,19 +1178,14 @@
         "Latitude" : 39.949888999999999,
         "Longitude" : -75.143754999999999,
         "GlobalID" : "8e4bb387-cf02-46ee-b101-e8ec3028f964"
+      },
+      "geometry" : {
+        "x" : -75.143754999999942,
+        "y" : 39.949889000000042
       }
     },
     {
-      "type" : "Feature",
-      "id" : 16,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.140408999999977,
-          39.960495000000037
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 16,
         "OBJECTID" : 17,
         "Route" : "Market-Frankford Line",
@@ -1008,19 +1232,14 @@
         "Latitude" : 39.960495000000002,
         "Longitude" : -75.140409000000005,
         "GlobalID" : "b1362ba7-7fa4-4e65-aa28-eb1bcea3d28f"
+      },
+      "geometry" : {
+        "x" : -75.140408999999977,
+        "y" : 39.960495000000037
       }
     },
     {
-      "type" : "Feature",
-      "id" : 17,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.136204999999961,
-          39.968878000000075
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 17,
         "OBJECTID" : 18,
         "Route" : "Market-Frankford Line",
@@ -1067,19 +1286,14 @@
         "Latitude" : 39.968877999999997,
         "Longitude" : -75.136205000000004,
         "GlobalID" : "d1a7c16b-b48f-476e-af5b-44c41c50649c"
+      },
+      "geometry" : {
+        "x" : -75.136204999999961,
+        "y" : 39.968878000000075
       }
     },
     {
-      "type" : "Feature",
-      "id" : 18,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.133489999999938,
-          39.978634000000056
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 18,
         "OBJECTID" : 19,
         "Route" : "Market-Frankford Line",
@@ -1126,19 +1340,14 @@
         "Latitude" : 39.978634,
         "Longitude" : -75.133489999999995,
         "GlobalID" : "c519ff83-59ef-4722-8451-243457d9278b"
+      },
+      "geometry" : {
+        "x" : -75.133489999999938,
+        "y" : 39.978634000000056
       }
     },
     {
-      "type" : "Feature",
-      "id" : 19,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.13201399999997,
-          39.985474000000067
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 19,
         "OBJECTID" : 20,
         "Route" : "Market-Frankford Line",
@@ -1185,19 +1394,14 @@
         "Latitude" : 39.985474000000004,
         "Longitude" : -75.132013999999998,
         "GlobalID" : "71aad61f-a12b-44d0-b932-32e0623752bf"
+      },
+      "geometry" : {
+        "x" : -75.13201399999997,
+        "y" : 39.985474000000067
       }
     },
     {
-      "type" : "Feature",
-      "id" : 20,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.127387999999939,
-          39.988833000000056
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 20,
         "OBJECTID" : 21,
         "Route" : "Market-Frankford Line",
@@ -1244,19 +1448,14 @@
         "Latitude" : 39.988833,
         "Longitude" : -75.127387999999996,
         "GlobalID" : "f2bed68e-fa2e-422e-afbf-326d83c135bf"
+      },
+      "geometry" : {
+        "x" : -75.127387999999939,
+        "y" : 39.988833000000056
       }
     },
     {
-      "type" : "Feature",
-      "id" : 21,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.122565999999949,
-          39.991456000000028
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 21,
         "OBJECTID" : 22,
         "Route" : "Market-Frankford Line",
@@ -1303,19 +1502,14 @@
         "Latitude" : 39.991455999999999,
         "Longitude" : -75.122566000000006,
         "GlobalID" : "57fa3703-3c8f-4f81-836f-d32113c657e5"
+      },
+      "geometry" : {
+        "x" : -75.122565999999949,
+        "y" : 39.991456000000028
       }
     },
     {
-      "type" : "Feature",
-      "id" : 22,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.113376999999957,
-          39.996491000000049
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 22,
         "OBJECTID" : 23,
         "Route" : "Market-Frankford Line",
@@ -1362,19 +1556,14 @@
         "Latitude" : 39.996490999999999,
         "Longitude" : -75.113377,
         "GlobalID" : "16013862-4c33-4522-b179-22264829dbb6"
+      },
+      "geometry" : {
+        "x" : -75.113376999999957,
+        "y" : 39.996491000000049
       }
     },
     {
-      "type" : "Feature",
-      "id" : 23,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.106469999999945,
-          40.000296000000048
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 23,
         "OBJECTID" : 24,
         "Route" : "Market-Frankford Line",
@@ -1421,19 +1610,14 @@
         "Latitude" : 40.000295999999999,
         "Longitude" : -75.106470000000002,
         "GlobalID" : "e25643d7-89a0-4973-a233-c0421f6ddf92"
+      },
+      "geometry" : {
+        "x" : -75.106469999999945,
+        "y" : 40.000296000000048
       }
     },
     {
-      "type" : "Feature",
-      "id" : 24,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.096340999999939,
-          40.005836000000045
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 24,
         "OBJECTID" : 25,
         "Route" : "Market-Frankford Line",
@@ -1480,19 +1664,14 @@
         "Latitude" : 40.005836000000002,
         "Longitude" : -75.096340999999995,
         "GlobalID" : "c954e746-ae58-4ffc-98c6-2efb4108fd09"
+      },
+      "geometry" : {
+        "x" : -75.096340999999939,
+        "y" : 40.005836000000045
       }
     },
     {
-      "type" : "Feature",
-      "id" : 25,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.088749999999948,
-          40.010961000000066
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 25,
         "OBJECTID" : 26,
         "Route" : "Market-Frankford Line",
@@ -1539,19 +1718,14 @@
         "Latitude" : 40.010961000000002,
         "Longitude" : -75.088750000000005,
         "GlobalID" : "5d9bd8a9-af32-46aa-8e31-a3304bc8f1e6"
+      },
+      "geometry" : {
+        "x" : -75.088749999999948,
+        "y" : 40.010961000000066
       }
     },
     {
-      "type" : "Feature",
-      "id" : 26,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.083955999999944,
-          40.01649800000007
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 26,
         "OBJECTID" : 27,
         "Route" : "Market-Frankford Line",
@@ -1598,19 +1772,14 @@
         "Latitude" : 40.016497999999999,
         "Longitude" : -75.083956000000001,
         "GlobalID" : "33c10bf0-7298-4d93-a751-4d3a9d46cdf3"
+      },
+      "geometry" : {
+        "x" : -75.083955999999944,
+        "y" : 40.01649800000007
       }
     },
     {
-      "type" : "Feature",
-      "id" : 27,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.077878999999939,
-          40.022993000000042
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 27,
         "OBJECTID" : 28,
         "Route" : "Market-Frankford Line",
@@ -1657,6 +1826,10 @@
         "Latitude" : 40.022993,
         "Longitude" : -75.077878999999996,
         "GlobalID" : "fa4ac2c7-112a-4553-b0df-fdd91bffda9b"
+      },
+      "geometry" : {
+        "x" : -75.077878999999939,
+        "y" : 40.022993000000042
       }
     }
   ]

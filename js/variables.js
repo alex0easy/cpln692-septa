@@ -20,7 +20,7 @@ url[9] = "https://raw.githubusercontent.com/alex0easy/cpln692-septa/master/json/
 url[10] = "https://raw.githubusercontent.com/alex0easy/cpln692-septa/master/json/Bus_Stops.json";
 url[11] = "https://raw.githubusercontent.com/alex0easy/cpln692-septa/master/json/Bus_Routes.json";
 
-// Storage for shapefiles
+// Storage for geoJSON files
 var MFL_Station;
 var MFL_Line;
 var BSL_Station;
@@ -34,5 +34,34 @@ var Trolley_Route;
 var Bus_Stop;
 var Bus_Route;
 
-// Storage for queries
-var railcheck = {};
+// Storage for layers
+var MFL_Line_Layer;
+var BSL_Line_Layer;
+var NHSL_Line_Layer;
+var RR_Line_Layer;
+
+var MFL_Station_Layer;
+var MFL_Station_Icon = new L.Icon({iconUrl: 'markers/nhsl.png'});
+
+// Storage for rail line objects
+var MFLLStyle = {
+    "color": "#007dc3",
+    "weight": 5,
+    "opacity": 0.6
+};
+
+var BSLLStyle = {
+    "color": "#ff8f1c",
+    "weight": 5,
+    "opacity": 0.6
+};
+var NHSLLStyle = {
+    "color": "#781d7e",
+    "weight": 5,
+    "opacity": 0.6
+};
+var RRLStyle = {
+    "color": "#45647b",
+    "weight": 5,
+    "opacity": 0.6
+};

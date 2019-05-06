@@ -1,23 +1,326 @@
 {
-  "type" : "FeatureCollection",
-  "crs" : {
-    "type" : "name",
-    "properties" : {
-      "name" : "EPSG:4326"
-    }
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "FID" : "FID",
+    "OBJECTID" : "OBJECTID",
+    "Route" : "Route",
+    "Station" : "Station",
+    "Stop_ID" : "Stop_ID",
+    "On_Street" : "On_Street",
+    "At_Street" : "At_Street",
+    "Street_Add" : "Street_Add",
+    "City" : "City",
+    "State" : "State",
+    "Zip" : "Zip",
+    "County" : "County",
+    "Municipali" : "Municipali",
+    "Owner" : "Owner",
+    "Average_We" : "Average_We",
+    "Average_Sa" : "Average_Sa",
+    "Average_Su" : "Average_Su",
+    "Ticket_Off" : "Ticket_Off",
+    "Handicap_A" : "Handicap_A",
+    "Parking_Av" : "Parking_Av",
+    "Number_of_" : "Number_of_",
+    "Number_o_1" : "Number_o_1",
+    "Taxi_Stand" : "Taxi_Stand",
+    "Platform_T" : "Platform_T",
+    "Station_Bu" : "Station_Bu",
+    "Shelter" : "Shelter",
+    "Bench" : "Bench",
+    "Elevator" : "Elevator",
+    "Escaltor" : "Escaltor",
+    "Lighting" : "Lighting",
+    "Restroom" : "Restroom",
+    "Trash_Rece" : "Trash_Rece",
+    "Recycling_" : "Recycling_",
+    "Map" : "Map",
+    "Fare_Infor" : "Fare_Infor",
+    "Schedule_I" : "Schedule_I",
+    "Minority_A" : "Minority_A",
+    "Low_Income" : "Low_Income",
+    "Minority__" : "Minority__",
+    "PA_State_S" : "PA_State_S",
+    "PA_State_H" : "PA_State_H",
+    "PA_US_Cong" : "PA_US_Cong",
+    "Philadelph" : "Philadelph",
+    "Latitude" : "Latitude",
+    "Longitude" : "Longitude",
+    "GlobalID" : "GlobalID"
   },
+  "geometryType" : "esriGeometryPoint",
+  "spatialReference" : {
+    "wkid" : 4326,
+    "latestWkid" : 4326
+  },
+  "fields" : [
+    {
+      "name" : "FID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "FID"
+    },
+    {
+      "name" : "OBJECTID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "OBJECTID"
+    },
+    {
+      "name" : "Route",
+      "type" : "esriFieldTypeString",
+      "alias" : "Route",
+      "length" : 80
+    },
+    {
+      "name" : "Station",
+      "type" : "esriFieldTypeString",
+      "alias" : "Station",
+      "length" : 80
+    },
+    {
+      "name" : "Stop_ID",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Stop_ID"
+    },
+    {
+      "name" : "On_Street",
+      "type" : "esriFieldTypeString",
+      "alias" : "On_Street",
+      "length" : 80
+    },
+    {
+      "name" : "At_Street",
+      "type" : "esriFieldTypeString",
+      "alias" : "At_Street",
+      "length" : 80
+    },
+    {
+      "name" : "Street_Add",
+      "type" : "esriFieldTypeString",
+      "alias" : "Street_Add",
+      "length" : 80
+    },
+    {
+      "name" : "City",
+      "type" : "esriFieldTypeString",
+      "alias" : "City",
+      "length" : 80
+    },
+    {
+      "name" : "State",
+      "type" : "esriFieldTypeString",
+      "alias" : "State",
+      "length" : 80
+    },
+    {
+      "name" : "Zip",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Zip"
+    },
+    {
+      "name" : "County",
+      "type" : "esriFieldTypeString",
+      "alias" : "County",
+      "length" : 80
+    },
+    {
+      "name" : "Municipali",
+      "type" : "esriFieldTypeString",
+      "alias" : "Municipali",
+      "length" : 80
+    },
+    {
+      "name" : "Owner",
+      "type" : "esriFieldTypeString",
+      "alias" : "Owner",
+      "length" : 80
+    },
+    {
+      "name" : "Average_We",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Average_We"
+    },
+    {
+      "name" : "Average_Sa",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Average_Sa"
+    },
+    {
+      "name" : "Average_Su",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Average_Su"
+    },
+    {
+      "name" : "Ticket_Off",
+      "type" : "esriFieldTypeString",
+      "alias" : "Ticket_Off",
+      "length" : 80
+    },
+    {
+      "name" : "Handicap_A",
+      "type" : "esriFieldTypeString",
+      "alias" : "Handicap_A",
+      "length" : 80
+    },
+    {
+      "name" : "Parking_Av",
+      "type" : "esriFieldTypeString",
+      "alias" : "Parking_Av",
+      "length" : 80
+    },
+    {
+      "name" : "Number_of_",
+      "type" : "esriFieldTypeString",
+      "alias" : "Number_of_",
+      "length" : 80
+    },
+    {
+      "name" : "Number_o_1",
+      "type" : "esriFieldTypeString",
+      "alias" : "Number_o_1",
+      "length" : 80
+    },
+    {
+      "name" : "Taxi_Stand",
+      "type" : "esriFieldTypeString",
+      "alias" : "Taxi_Stand",
+      "length" : 80
+    },
+    {
+      "name" : "Platform_T",
+      "type" : "esriFieldTypeString",
+      "alias" : "Platform_T",
+      "length" : 80
+    },
+    {
+      "name" : "Station_Bu",
+      "type" : "esriFieldTypeString",
+      "alias" : "Station_Bu",
+      "length" : 80
+    },
+    {
+      "name" : "Shelter",
+      "type" : "esriFieldTypeString",
+      "alias" : "Shelter",
+      "length" : 80
+    },
+    {
+      "name" : "Bench",
+      "type" : "esriFieldTypeString",
+      "alias" : "Bench",
+      "length" : 80
+    },
+    {
+      "name" : "Elevator",
+      "type" : "esriFieldTypeString",
+      "alias" : "Elevator",
+      "length" : 80
+    },
+    {
+      "name" : "Escaltor",
+      "type" : "esriFieldTypeString",
+      "alias" : "Escaltor",
+      "length" : 80
+    },
+    {
+      "name" : "Lighting",
+      "type" : "esriFieldTypeString",
+      "alias" : "Lighting",
+      "length" : 80
+    },
+    {
+      "name" : "Restroom",
+      "type" : "esriFieldTypeString",
+      "alias" : "Restroom",
+      "length" : 80
+    },
+    {
+      "name" : "Trash_Rece",
+      "type" : "esriFieldTypeString",
+      "alias" : "Trash_Rece",
+      "length" : 80
+    },
+    {
+      "name" : "Recycling_",
+      "type" : "esriFieldTypeString",
+      "alias" : "Recycling_",
+      "length" : 80
+    },
+    {
+      "name" : "Map",
+      "type" : "esriFieldTypeString",
+      "alias" : "Map",
+      "length" : 80
+    },
+    {
+      "name" : "Fare_Infor",
+      "type" : "esriFieldTypeString",
+      "alias" : "Fare_Infor",
+      "length" : 80
+    },
+    {
+      "name" : "Schedule_I",
+      "type" : "esriFieldTypeString",
+      "alias" : "Schedule_I",
+      "length" : 80
+    },
+    {
+      "name" : "Minority_A",
+      "type" : "esriFieldTypeString",
+      "alias" : "Minority_A",
+      "length" : 80
+    },
+    {
+      "name" : "Low_Income",
+      "type" : "esriFieldTypeString",
+      "alias" : "Low_Income",
+      "length" : 80
+    },
+    {
+      "name" : "Minority__",
+      "type" : "esriFieldTypeString",
+      "alias" : "Minority__",
+      "length" : 80
+    },
+    {
+      "name" : "PA_State_S",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "PA_State_S"
+    },
+    {
+      "name" : "PA_State_H",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "PA_State_H"
+    },
+    {
+      "name" : "PA_US_Cong",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "PA_US_Cong"
+    },
+    {
+      "name" : "Philadelph",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "Philadelph"
+    },
+    {
+      "name" : "Latitude",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Latitude"
+    },
+    {
+      "name" : "Longitude",
+      "type" : "esriFieldTypeDouble",
+      "alias" : "Longitude"
+    },
+    {
+      "name" : "GlobalID",
+      "type" : "esriFieldTypeString",
+      "alias" : "GlobalID",
+      "length" : 80
+    }
+  ],
   "features" : [
     {
-      "type" : "Feature",
-      "id" : 0,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.173935999999969,
-          39.905434000000071
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 0,
         "OBJECTID" : 1,
         "Route" : "Broad Street Line",
@@ -64,19 +367,14 @@
         "Latitude" : 39.905434,
         "Longitude" : -75.173935999999998,
         "GlobalID" : "3995d35c-eb53-4f8e-89f5-03538c614e5d"
+      },
+      "geometry" : {
+        "x" : -75.173935999999969,
+        "y" : 39.905434000000071
       }
     },
     {
-      "type" : "Feature",
-      "id" : 1,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.171336999999937,
-          39.916822000000025
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 1,
         "OBJECTID" : 2,
         "Route" : "Broad Street Line",
@@ -123,19 +421,14 @@
         "Latitude" : 39.916822000000003,
         "Longitude" : -75.171336999999994,
         "GlobalID" : "9905da22-ec7b-4c1b-a503-b2ed232ca5d3"
+      },
+      "geometry" : {
+        "x" : -75.171336999999937,
+        "y" : 39.916822000000025
       }
     },
     {
-      "type" : "Feature",
-      "id" : 2,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.169679999999971,
-          39.924389000000076
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 2,
         "OBJECTID" : 3,
         "Route" : "Broad Street Line",
@@ -182,19 +475,14 @@
         "Latitude" : 39.924388999999998,
         "Longitude" : -75.16968,
         "GlobalID" : "f309ee38-4fba-47b6-964f-60197037bb71"
+      },
+      "geometry" : {
+        "x" : -75.169679999999971,
+        "y" : 39.924389000000076
       }
     },
     {
-      "type" : "Feature",
-      "id" : 3,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.168500999999935,
-          39.92984800000005
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 3,
         "OBJECTID" : 4,
         "Route" : "Broad Street Line",
@@ -241,19 +529,14 @@
         "Latitude" : 39.929848,
         "Longitude" : -75.168501000000006,
         "GlobalID" : "d4bb68b5-5539-4731-b62d-2e7621f62dce"
+      },
+      "geometry" : {
+        "x" : -75.168500999999935,
+        "y" : 39.92984800000005
       }
     },
     {
-      "type" : "Feature",
-      "id" : 4,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.167128999999989,
-          39.936194000000057
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 4,
         "OBJECTID" : 5,
         "Route" : "Broad Street Line",
@@ -300,19 +583,14 @@
         "Latitude" : 39.936194,
         "Longitude" : -75.167129000000003,
         "GlobalID" : "361a7bd4-d51c-4414-872c-ebc909137df5"
+      },
+      "geometry" : {
+        "x" : -75.167128999999989,
+        "y" : 39.936194000000057
       }
     },
     {
-      "type" : "Feature",
-      "id" : 5,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.165401999999972,
-          39.944086000000027
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 5,
         "OBJECTID" : 6,
         "Route" : "Broad Street Line",
@@ -359,19 +637,14 @@
         "Latitude" : 39.944085999999999,
         "Longitude" : -75.165402,
         "GlobalID" : "5343a40c-7605-41b3-a4d6-bfa13958cc72"
+      },
+      "geometry" : {
+        "x" : -75.165401999999972,
+        "y" : 39.944086000000027
       }
     },
     {
-      "type" : "Feature",
-      "id" : 6,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.164382999999987,
-          39.948799000000065
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 6,
         "OBJECTID" : 7,
         "Route" : "Broad Street Line",
@@ -418,19 +691,14 @@
         "Latitude" : 39.948799000000001,
         "Longitude" : -75.164383000000001,
         "GlobalID" : "b93762c1-771c-4f63-b228-4923f9c89175"
+      },
+      "geometry" : {
+        "x" : -75.164382999999987,
+        "y" : 39.948799000000065
       }
     },
     {
-      "type" : "Feature",
-      "id" : 7,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.163593999999989,
-          39.952389000000039
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 7,
         "OBJECTID" : 8,
         "Route" : "Broad Street Line",
@@ -477,19 +745,14 @@
         "Latitude" : 39.952388999999997,
         "Longitude" : -75.163594000000003,
         "GlobalID" : "577d129f-c93e-4976-9418-5ba9ad163e49"
+      },
+      "geometry" : {
+        "x" : -75.163593999999989,
+        "y" : 39.952389000000039
       }
     },
     {
-      "type" : "Feature",
-      "id" : 8,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.162600999999938,
-          39.95701100000008
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 8,
         "OBJECTID" : 9,
         "Route" : "Broad Street Line",
@@ -536,19 +799,14 @@
         "Latitude" : 39.957011000000001,
         "Longitude" : -75.162600999999995,
         "GlobalID" : "a02c01a5-4e20-45a8-bd21-30ed9a2cfac2"
+      },
+      "geometry" : {
+        "x" : -75.162600999999938,
+        "y" : 39.95701100000008
       }
     },
     {
-      "type" : "Feature",
-      "id" : 9,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.161430999999936,
-          39.962436000000025
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 9,
         "OBJECTID" : 10,
         "Route" : "Broad Street Line",
@@ -595,19 +853,14 @@
         "Latitude" : 39.962435999999997,
         "Longitude" : -75.161430999999993,
         "GlobalID" : "ecbf48ee-3fc5-4821-92e6-85b8f4d51223"
+      },
+      "geometry" : {
+        "x" : -75.161430999999936,
+        "y" : 39.962436000000025
       }
     },
     {
-      "type" : "Feature",
-      "id" : 10,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.160457999999949,
-          39.96698200000003
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 10,
         "OBJECTID" : 11,
         "Route" : "Broad Street Line",
@@ -654,19 +907,14 @@
         "Latitude" : 39.966982000000002,
         "Longitude" : -75.160458000000006,
         "GlobalID" : "0ea86328-a6d6-440d-8877-15a437e50e66"
+      },
+      "geometry" : {
+        "x" : -75.160457999999949,
+        "y" : 39.96698200000003
       }
     },
     {
-      "type" : "Feature",
-      "id" : 11,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.159441999999956,
-          39.971468000000073
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 11,
         "OBJECTID" : 12,
         "Route" : "Broad Street Line",
@@ -713,19 +961,14 @@
         "Latitude" : 39.971468000000002,
         "Longitude" : -75.159441999999999,
         "GlobalID" : "0c7955da-2329-410f-ad9d-33f9d91bc8bd"
+      },
+      "geometry" : {
+        "x" : -75.159441999999956,
+        "y" : 39.971468000000073
       }
     },
     {
-      "type" : "Feature",
-      "id" : 12,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.157880999999975,
-          39.978678000000059
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 12,
         "OBJECTID" : 13,
         "Route" : "Broad Street Line",
@@ -772,19 +1015,14 @@
         "Latitude" : 39.978678000000002,
         "Longitude" : -75.157881000000003,
         "GlobalID" : "e20452b0-3560-427f-85a5-de60a9190804"
+      },
+      "geometry" : {
+        "x" : -75.157880999999975,
+        "y" : 39.978678000000059
       }
     },
     {
-      "type" : "Feature",
-      "id" : 13,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.156036999999969,
-          39.987067000000025
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 13,
         "OBJECTID" : 14,
         "Route" : "Broad Street Line",
@@ -831,19 +1069,14 @@
         "Latitude" : 39.987067000000003,
         "Longitude" : -75.156036999999998,
         "GlobalID" : "2cfd34ba-5cd8-41b7-8173-407c4d80a241"
+      },
+      "geometry" : {
+        "x" : -75.156036999999969,
+        "y" : 39.987067000000025
       }
     },
     {
-      "type" : "Feature",
-      "id" : 14,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.154512999999952,
-          39.994110000000035
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 14,
         "OBJECTID" : 15,
         "Route" : "Broad Street Line",
@@ -890,19 +1123,14 @@
         "Latitude" : 39.994109999999999,
         "Longitude" : -75.154512999999994,
         "GlobalID" : "b9ac27a1-d55c-486d-8426-e3c002147d89"
+      },
+      "geometry" : {
+        "x" : -75.154512999999952,
+        "y" : 39.994110000000035
       }
     },
     {
-      "type" : "Feature",
-      "id" : 15,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.152877999999987,
-          40.001597000000061
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 15,
         "OBJECTID" : 16,
         "Route" : "Broad Street Line",
@@ -949,19 +1177,14 @@
         "Latitude" : 40.001596999999997,
         "Longitude" : -75.152878000000001,
         "GlobalID" : "b8d4cf1c-62a1-4caa-a1f1-3ad810d33b5f"
+      },
+      "geometry" : {
+        "x" : -75.152877999999987,
+        "y" : 40.001597000000061
       }
     },
     {
-      "type" : "Feature",
-      "id" : 16,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.151208999999938,
-          40.009247000000073
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 16,
         "OBJECTID" : 17,
         "Route" : "Broad Street Line",
@@ -1008,19 +1231,14 @@
         "Latitude" : 40.009247000000002,
         "Longitude" : -75.151208999999994,
         "GlobalID" : "3ea30c4a-d8a5-419c-95ad-ea5a45f85c9f"
+      },
+      "geometry" : {
+        "x" : -75.151208999999938,
+        "y" : 40.009247000000073
       }
     },
     {
-      "type" : "Feature",
-      "id" : 17,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.149291999999946,
-          40.018024000000025
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 17,
         "OBJECTID" : 18,
         "Route" : "Broad Street Line",
@@ -1067,19 +1285,14 @@
         "Latitude" : 40.018023999999997,
         "Longitude" : -75.149292000000003,
         "GlobalID" : "7ecdb8f8-77fd-4cf2-9995-5a1dbfbc122b"
+      },
+      "geometry" : {
+        "x" : -75.149291999999946,
+        "y" : 40.018024000000025
       }
     },
     {
-      "type" : "Feature",
-      "id" : 18,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.147869999999955,
-          40.024561000000062
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 18,
         "OBJECTID" : 19,
         "Route" : "Broad Street Line",
@@ -1126,19 +1339,14 @@
         "Latitude" : 40.024560999999999,
         "Longitude" : -75.147869999999998,
         "GlobalID" : "0b0425fc-8451-4169-bc2d-cde6f6f22b93"
+      },
+      "geometry" : {
+        "x" : -75.147869999999955,
+        "y" : 40.024561000000062
       }
     },
     {
-      "type" : "Feature",
-      "id" : 19,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.146691999999973,
-          40.029910000000029
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 19,
         "OBJECTID" : 20,
         "Route" : "Broad Street Line",
@@ -1185,19 +1393,14 @@
         "Latitude" : 40.029910000000001,
         "Longitude" : -75.146692000000002,
         "GlobalID" : "71b4c2dd-f0ff-4a51-9235-8a2d7cfdd4ac"
+      },
+      "geometry" : {
+        "x" : -75.146691999999973,
+        "y" : 40.029910000000029
       }
     },
     {
-      "type" : "Feature",
-      "id" : 20,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.144691999999964,
-          40.039056000000073
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 20,
         "OBJECTID" : 21,
         "Route" : "Broad Street Line",
@@ -1244,19 +1447,14 @@
         "Latitude" : 40.039056000000002,
         "Longitude" : -75.144692000000006,
         "GlobalID" : "aa505339-6747-4cd8-9505-a2b45ad37b64"
+      },
+      "geometry" : {
+        "x" : -75.144691999999964,
+        "y" : 40.039056000000073
       }
     },
     {
-      "type" : "Feature",
-      "id" : 21,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.136793999999952,
-          40.041852000000063
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 21,
         "OBJECTID" : 22,
         "Route" : "Broad Street Line",
@@ -1303,19 +1501,14 @@
         "Latitude" : 40.041851999999999,
         "Longitude" : -75.136793999999995,
         "GlobalID" : "d8111e13-ca9b-43da-88dc-f3375d70da48"
+      },
+      "geometry" : {
+        "x" : -75.136793999999952,
+        "y" : 40.041852000000063
       }
     },
     {
-      "type" : "Feature",
-      "id" : 22,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.153098999999941,
-          39.955384000000038
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 22,
         "OBJECTID" : 23,
         "Route" : "Broad Street Line",
@@ -1362,19 +1555,14 @@
         "Latitude" : 39.955384000000002,
         "Longitude" : -75.153098999999997,
         "GlobalID" : "c1d2f30a-ae4b-4904-851a-51d8b61d672c"
+      },
+      "geometry" : {
+        "x" : -75.153098999999941,
+        "y" : 39.955384000000038
       }
     },
     {
-      "type" : "Feature",
-      "id" : 23,
-      "geometry" : {
-        "type" : "Point",
-        "coordinates" : [
-          -75.153752999999938,
-          39.951149000000044
-        ]
-      },
-      "properties" : {
+      "attributes" : {
         "FID" : 23,
         "OBJECTID" : 24,
         "Route" : "Broad Street Line",
@@ -1421,6 +1609,10 @@
         "Latitude" : 39.951149000000001,
         "Longitude" : -75.153752999999995,
         "GlobalID" : "5c5ac535-a7bd-4443-b651-6f202e6cb8fc"
+      },
+      "geometry" : {
+        "x" : -75.153752999999938,
+        "y" : 39.951149000000044
       }
     }
   ]
