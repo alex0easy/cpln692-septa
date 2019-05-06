@@ -1,141 +1,18 @@
 {
-  "displayFieldName" : "",
-  "fieldAliases" : {
-    "FID" : "FID",
-    "OBJECTID" : "OBJECTID",
-    "Route" : "Route",
-    "Vehicle_Ho" : "Vehicle_Ho",
-    "Vehicle_Mi" : "Vehicle_Mi",
-    "Peak_Vehic" : "Peak_Vehic",
-    "Average_We" : "Average_We",
-    "Annual_Pas" : "Annual_Pas",
-    "Average_Tr" : "Average_Tr",
-    "Passenger_" : "Passenger_",
-    "Passenge_1" : "Passenge_1",
-    "Variable_E" : "Variable_E",
-    "Variable_R" : "Variable_R",
-    "Fully_Allo" : "Fully_Allo",
-    "Operating_" : "Operating_",
-    "GlobalID" : "GlobalID",
-    "Shape__Len" : "Shape__Len"
-  },
-  "geometryType" : "esriGeometryPolyline",
-  "spatialReference" : {
-    "wkid" : 4326,
-    "latestWkid" : 4326
-  },
-  "fields" : [
-    {
-      "name" : "FID",
-      "type" : "esriFieldTypeOID",
-      "alias" : "FID"
-    },
-    {
-      "name" : "OBJECTID",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "OBJECTID"
-    },
-    {
-      "name" : "Route",
-      "type" : "esriFieldTypeString",
-      "alias" : "Route",
-      "length" : 80
-    },
-    {
-      "name" : "Vehicle_Ho",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "Vehicle_Ho"
-    },
-    {
-      "name" : "Vehicle_Mi",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "Vehicle_Mi"
-    },
-    {
-      "name" : "Peak_Vehic",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "Peak_Vehic"
-    },
-    {
-      "name" : "Average_We",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "Average_We"
-    },
-    {
-      "name" : "Annual_Pas",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "Annual_Pas"
-    },
-    {
-      "name" : "Average_Tr",
-      "type" : "esriFieldTypeDouble",
-      "alias" : "Average_Tr"
-    },
-    {
-      "name" : "Passenger_",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "Passenger_"
-    },
-    {
-      "name" : "Passenge_1",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "Passenge_1"
-    },
-    {
-      "name" : "Variable_E",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "Variable_E"
-    },
-    {
-      "name" : "Variable_R",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "Variable_R"
-    },
-    {
-      "name" : "Fully_Allo",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "Fully_Allo"
-    },
-    {
-      "name" : "Operating_",
-      "type" : "esriFieldTypeInteger",
-      "alias" : "Operating_"
-    },
-    {
-      "name" : "GlobalID",
-      "type" : "esriFieldTypeString",
-      "alias" : "GlobalID",
-      "length" : 80
-    },
-    {
-      "name" : "Shape__Len",
-      "type" : "esriFieldTypeDouble",
-      "alias" : "Shape__Len"
+  "type" : "FeatureCollection",
+  "crs" : {
+    "type" : "name",
+    "properties" : {
+      "name" : "EPSG:4326"
     }
-  ],
+  },
   "features" : [
     {
-      "attributes" : {
-        "FID" : 0,
-        "OBJECTID" : 1,
-        "Route" : "Market-Frankford Line",
-        "Vehicle_Ho" : 470930,
-        "Vehicle_Mi" : 9230221,
-        "Peak_Vehic" : 144,
-        "Average_We" : 180512,
-        "Annual_Pas" : 54767414,
-        "Average_Tr" : 4.7000000000000002,
-        "Passenger_" : 257406800,
-        "Passenge_1" : 59810392,
-        "Variable_E" : 137752084,
-        "Variable_R" : 158,
-        "Fully_Allo" : 136694484,
-        "Operating_" : 44,
-        "GlobalID" : "9b7ec014-18d2-42af-a482-a86be8a370e6",
-        "Shape__Len" : 0.237995416570874
-      },
+      "type" : "Feature",
+      "id" : 0,
       "geometry" : {
-        "paths" : [
+        "type" : "MultiLineString",
+        "coordinates" : [
           [
             [
               -75.077794909477205,
@@ -1925,6 +1802,25 @@
             ]
           ]
         ]
+      },
+      "properties" : {
+        "FID" : 0,
+        "OBJECTID" : 1,
+        "Route" : "Market-Frankford Line",
+        "Vehicle_Ho" : 470930,
+        "Vehicle_Mi" : 9230221,
+        "Peak_Vehic" : 144,
+        "Average_We" : 180512,
+        "Annual_Pas" : 54767414,
+        "Average_Tr" : 4.7000000000000002,
+        "Passenger_" : 257406800,
+        "Passenge_1" : 59810392,
+        "Variable_E" : 137752084,
+        "Variable_R" : 158,
+        "Fully_Allo" : 136694484,
+        "Operating_" : 44,
+        "GlobalID" : "9b7ec014-18d2-42af-a482-a86be8a370e6",
+        "Shape__Len" : 0.237995416570874
       }
     }
   ]
