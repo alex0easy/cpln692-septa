@@ -22,21 +22,28 @@
         <input type="checkbox" id="nhsl_select" checked='checked'> Norristown High-Speed Line<br>
         <input type="checkbox" id="rr_select" checked='checked'> Regional Rail Lines<br>
     </div>
-
-
-    <div id='selectionzone'>
-      <select id='mode'>
-        <option value="walk">Walking</option>
-        <option value="bike">Biking</option>
-        <option value="dis">x100 Feet Distance</option>
-      </select>
-    </div>
     <br>
     <div>
       Select Your Connection Mode and Time:<br>
     </div>
+
+    <div id='selectionzone'>
+      <select id='mode'>
+        <option value="walking">Walking</option>
+        <option value="biking">Biking</option>
+        <option value="dis">x100 Feet Distance</option>
+      </select>
+    </div>
+    <br>
+
     <div class="slidecontainer">
-      <input type="range" min="1" max="30" value="10" class="slider" id="myRange">
+      <input type="range" min="1" max="30" value="10" class="slider" id="range">
+    </div>
+    <br>
+    <div class='searchinfo'>
+      You are searching for <br>
+      <label id='searchdisplay'>0</label>
+      .
     </div>
 
   </div>

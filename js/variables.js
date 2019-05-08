@@ -1,4 +1,14 @@
 // This file stores global variables
+// User's search criteria
+var searchcriteria = {
+  function: 0,
+  radius: 0
+};
+
+// Mapbox related
+var token = '&access_token=pk.eyJ1IjoiYWxleDBlYXN5IiwiYSI6ImNqdmZwMmk0NDByYjg0M2t3Zm9rZW42ZHQifQ.1wZxIuUdeVjmV0dslAfdow';
+var mapboxadd = 'https://api.mapbox.com/isochrone/v1/mapbox/';
+var searcharea;
 //json file addresses. Station first, then lines.
 var url = [];
 // MFL
@@ -40,28 +50,67 @@ var BSL_Line_Layer;
 var NHSL_Line_Layer;
 var RR_Line_Layer;
 
-var MFL_Station_Layer;
-var MFL_Station_Icon = new L.Icon({iconUrl: 'markers/nhsl.png'});
+var MFL_Station_List = [];
+var MFL_Station_Layer = [];
+
+
+var BSL_Station_List = [];
+var BSL_Station_Layer = [];
+
+var NHSL_Station_List = [];
+var NHSL_Station_Layer = [];
+
+var RR_Station_List = [];
+var RR_Station_Layer = [];
+
+// Icons
+var MFL_Station_Icon = new L.Icon({
+  iconUrl: 'markers/mfl.png',
+  iconSize: [20, 32],
+  iconAnchor: [10, 32],
+  popupAnchor: [0, -33]
+});
+
+var BSL_Station_Icon = new L.Icon({
+  iconUrl: 'markers/bsl.png',
+  iconSize: [20, 32],
+  iconAnchor: [10, 32],
+  popupAnchor: [0, -33]
+});
+
+var NHSL_Station_Icon = new L.Icon({
+  iconUrl: 'markers/nhsl.png',
+  iconSize: [20, 32],
+  iconAnchor: [10, 32],
+  popupAnchor: [0, -33]
+});
+
+var RR_Station_Icon = new L.Icon({
+  iconUrl: 'markers/rr.png',
+  iconSize: [20, 32],
+  iconAnchor: [10, 32],
+  popupAnchor: [0, -33]
+});
 
 // Storage for rail line objects
 var MFLLStyle = {
-    "color": "#007dc3",
-    "weight": 5,
-    "opacity": 0.6
+  "color": "#007dc3",
+  "weight": 5,
+  "opacity": 0.6
 };
 
 var BSLLStyle = {
-    "color": "#ff8f1c",
-    "weight": 5,
-    "opacity": 0.6
+  "color": "#ff8f1c",
+  "weight": 5,
+  "opacity": 0.6
 };
 var NHSLLStyle = {
-    "color": "#781d7e",
-    "weight": 5,
-    "opacity": 0.6
+  "color": "#781d7e",
+  "weight": 5,
+  "opacity": 0.6
 };
 var RRLStyle = {
-    "color": "#45647b",
-    "weight": 5,
-    "opacity": 0.6
+  "color": "#45647b",
+  "weight": 5,
+  "opacity": 0.6
 };
