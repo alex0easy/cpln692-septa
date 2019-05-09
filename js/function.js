@@ -2,10 +2,10 @@
 // General plotting functions
 var plotstations = function(list){
   for (let i=0; i < list.length; i++){
-    list[i].addTo(map).on('click', function(e) {getsearcharea(this)});
+    list[i].addTo(map).on('click', function(e) {searchandplot(this)});
     // Generates a new search area every time a station is clicked on
   };
-};
+
 
 var removedots = function(list){
   for (let i=0; i < list.length; i++){
@@ -35,8 +35,39 @@ var checkandremove = function(){
     map.removeLayer(searcharealayer);
   };
 };
-var ptsWithin;
-var getsearcharea = function(station) {
+
+// Searches for stops and routes within an area.
+var findwithin = function(area){
+  var dirtytrolleylist=[];
+  var dirtybuslist=[];
+
+  trolleystopswithin = turf.pointsWithinPolygon(Trolley_Stop, area);
+  busstopswithin = turf.pointsWithinPolygon(Bus_Stop, area);
+
+  _.each(trolleystopswithin.features, function(stop){
+    dirtytrolleylist.push(stop.properties.Route);
+  });
+
+  _.each(busstopswithin.features, function(stop){
+    if (stop.properties.Route != " ") {
+      dirtybuslist.push(stop.properties.Route);
+    };
+  });
+
+  trolleyrouteswithin = [...new Set(dirtytrolleylist)];
+  busrouteswithin = [...new Set(dirtybuslist)];
+
+
+};
+
+
+/* This function:
+    1. Finds the search area.
+    2. Finds the trolley and bus stops within the search area (by using the function above).
+    3. Finds the routes that go throught these stops.
+    4. Adds the stops and routes to map.
+*/
+var searchandplot = function(station) {
   var token = '&access_token=pk.eyJ1IjoiYWxleDBlYXN5IiwiYSI6ImNqdmZwMmk0NDByYjg0M2t3Zm9rZW42ZHQifQ.1wZxIuUdeVjmV0dslAfdow';
   var mapboxadd = 'https://api.mapbox.com/isochrone/v1/mapbox/';
 
@@ -46,7 +77,7 @@ var getsearcharea = function(station) {
       checkandremove();
       searcharealayer = L.geoJSON(o);
       searcharealayer.addTo(map);
-      ptsWithin = turf.pointsWithinPolygon(Trolley_Stop.features, o);
+      findwithin(o);
     });
   } else if (searchcriteria.function=='biking') {
     var address = mapboxadd + "cycling/" + station._latlng.lng + "," + station._latlng.lat + "?contours_minutes=" + searchcriteria.radius + '&polygons=true'+ token;
@@ -54,14 +85,14 @@ var getsearcharea = function(station) {
       checkandremove();
       searcharealayer = L.geoJSON(o);
       searcharealayer.addTo(map);
-      ptsWithin = turf.pointsWithinPolygon(Trolley_Stop.features, o);
+      findwithin(o);
     });
   } else {
     checkandremove();
     var searcharea = turf.circle([station._latlng.lng, station._latlng.lat], 0.0003048*searchcriteria.radius, {units: 'kilometers'});
     searcharealayer = L.geoJSON(searcharea);
     searcharealayer.addTo(map);
-    ptsWithin = turf.pointsWithinPolygon(Trolley_Stop.features, searcharea);
+    findwithin(searcharea);
   };
 };
 

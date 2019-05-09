@@ -7,6 +7,10 @@ var searchcriteria = {
 
 // Search area related
 var searcharealayer;
+var trolleystopswithin;
+var busstopswithin;
+var trolleyrouteswithin;
+var busrouteswithin;
 
 //json file addresses. Station first, then lines.
 var url = [];
