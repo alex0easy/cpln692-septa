@@ -48,20 +48,19 @@ var main = function() {
   };
 
   MFL_Station_Layer = stationlayergenerator(MFL_Station_List, MFL_Station_Icon);
-  plotdots(MFL_Station_Layer);
+  plotstations(MFL_Station_Layer);
 
   BSL_Station_Layer = stationlayergenerator(BSL_Station_List, BSL_Station_Icon);
-  plotdots(BSL_Station_Layer);
+  plotstations(BSL_Station_Layer);
 
   NHSL_Station_Layer = stationlayergenerator(NHSL_Station_List, NHSL_Station_Icon);
-  plotdots(NHSL_Station_Layer);
+  plotstations(NHSL_Station_Layer);
 
   RR_Station_Layer = stationlayergenerator(RR_Station_List, RR_Station_Icon);
-  plotdots(RR_Station_Layer);
+  plotstations(RR_Station_Layer);
 
   setsearchcriteria();
 
-  
 };
 
 

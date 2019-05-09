@@ -5,10 +5,9 @@ var searchcriteria = {
   radius: 0
 };
 
-// Mapbox related
-var token = '&access_token=pk.eyJ1IjoiYWxleDBlYXN5IiwiYSI6ImNqdmZwMmk0NDByYjg0M2t3Zm9rZW42ZHQifQ.1wZxIuUdeVjmV0dslAfdow';
-var mapboxadd = 'https://api.mapbox.com/isochrone/v1/mapbox/';
-var searcharea;
+// Search area related
+var searcharealayer;
+
 //json file addresses. Station first, then lines.
 var url = [];
 // MFL
