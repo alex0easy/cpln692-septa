@@ -14,34 +14,53 @@
 
     <div id="sidebarcontent">
 
+    <div id="helparea">
+      <p>
+        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Help
+        </button>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="helpbox">
+          1. Chooose your preferred connection mode with the dropdown menu, or search by distance directly.<br>
+          2. Drag the slider to change search radius in minutes or search distance.<br>
+          3. Click on a station to view nearby lines.<br>
+          4. You can toggle systems displayed with the checkboxes below.<br>
+          5. Do not search for excessively large areas within Center City, or the webpage may become very slow.
+        </div>
+      </div>
+    </div>
 
-    <div id='railselector'>Show Stations on:<br>
-        <input type="checkbox" id="mfl_select" checked='checked'> Market-Frankford Line<br>
-        <input type="checkbox" id="bsl_select" checked='checked'> Broad Street Line<br>
-        <input type="checkbox" id="nhsl_select"> Norristown Highspeed Line<br>
-        <input type="checkbox" id="rr_select"> Regional Rail Lines<br>
+    <div id='railselector' class='railselector'><label class='showstationson'>Show Stations on:</label><br>
+        <input type="checkbox" id="mfl_select" checked='checked'> <label class="MFL_Words"> Market-Frankford Line </label><br>
+        <input type="checkbox" id="bsl_select" checked='checked'> <label class="BSL_Words">Broad Street Line</label><br>
+        <input type="checkbox" id="nhsl_select"> <label class="NHSL_Words">Norristown Highspeed Line</label><br>
+        <input type="checkbox" id="rr_select"> <label class="RRL_Words">Regional Rail Lines</label><br>
     </div>
     <br>
-    <div>
-      Select Your Connection Mode and Time:<br>
-    </div>
+    <div class='railselector'>
+      <label class='showstationson'>
+        Select Your Connection Mode and Time:<br>
+      </label>
 
-    <div id='selectionzone'>
-      <select id='mode'>
-        <option value="walking">Walking</option>
-        <option value="cycling">Cycling</option>
-        <option value="dis">Direct Distance</option>
-      </select>
-    </div>
-    <br>
+      <div id='selectionzone'>
+        <select id='mode'>
+          <option value="walking">Walking</option>
+          <option value="cycling">Cycling</option>
+          <option value="dis">Direct Distance</option>
+        </select>
+      </div>
+      <br>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="25" value="10" class="slider" id="range">
+      </div>
+      </br>
 
-    <div class="slidecontainer">
-      <input type="range" min="1" max="25" value="10" class="slider" id="range">
-    </div>
-    <br>
-    <div class='searchinfo'>
+
+    <div class='criteriabox'>
       You are searching within <br>
-      <label id='searchdisplay'>0</label>
+      <label id='searchdisplay' class='criteria'>0</label>
+    </div>
     </div>
 
   </div>

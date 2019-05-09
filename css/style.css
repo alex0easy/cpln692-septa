@@ -16,7 +16,7 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #4CAF50;
+  background: black;
   cursor: pointer;
 }
 
@@ -26,4 +26,47 @@
   border-radius: 50%;
   background: #4CAF50;
   cursor: pointer;
+}
+
+.railselector {
+  width: 380px;
+  margin: 5px;
+  border: 5px solid Silver;
+  padding: 10px;
+}
+
+.helpbox {
+  width: 380px;
+  margin: 5px;
+  border: 1px solid Silver;
+  padding: 5px;
+}
+
+.criteriabox {
+  width: 350px;
+  padding: 5px;
+}
+
+.showstationson {
+  font-weight: bold;
+}
+
+.MFL_Words {
+  color:  #007dc3;
+}
+
+.BSL_Words {
+  color:  #ff8f1c;
+}
+
+.NHSL_Words {
+  color:  #781d7e;
+}
+
+.RR_Words {
+  color:  #45647b;
+}
+
+.criteria {
+  color: Maroon;
 }
