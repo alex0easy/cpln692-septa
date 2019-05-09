@@ -1,54 +1,90 @@
 // This page deals with the interactive buttons
 // General plotting functions
-var plotstations = function(list){
-  for (let i=0; i < list.length; i++){
-    list[i].addTo(map).on('click', function(e) {searchandplot(this)});
+// Plotting rail stations and add trigger for search
+var plotstations = function(list) {
+  for (let i = 0; i < list.length; i++) {
+    list[i].addTo(map).on('click', function(e) {
+      searchandplot(this);
+    });
     // Generates a new search area every time a station is clicked on
-  };
-
-
-var removedots = function(list){
-  for (let i=0; i < list.length; i++){
-    map.removeLayer(list[i]);
   };
 };
 
-// Find stations within search area
+// Plotting and removing stuff without adding click functions
+var plotdots = function(list) {
+  _.each(list, function(o){
+    o.addTo(map);
+  });
+};
 
+var removedots = function(list) {
+  _.each(list, function(o){
+    map.removeLayer(o);
+  });
+};
 
+var plotroutes = function(list_gj, list_layer, style) {
+  _.each(list_gj, function(o){
+    list_layer.push(L.geoJSON(o, style));
+  });
+  plotdots(list_layer);
+};
 
-// Query functions
-var setsearchcriteria = function(){
+// Listener for search critera
+var setsearchcriteria = function() {
   searchcriteria.function = $('#mode').val();
-  if (searchcriteria.function == 'dis'){
-    searchcriteria.radius = 100*$('#range').val();
+  if (searchcriteria.function == 'dis') {
+    searchcriteria.radius = 100 * $('#range').val();
     $('#searchdisplay').text(searchcriteria.radius + " feet around a station.");
   } else {
     searchcriteria.radius = $('#range').val();
-    $('#searchdisplay').text(searchcriteria.radius + " minutes of " + searchcriteria.function + " distance around a station.");
+    $('#searchdisplay').text(searchcriteria.radius + " minutes of " + searchcriteria.function+" distance around a station.");
   }
 };
 
 // Get search area and replace the old one with a new one
-var checkandremove = function(){
-  if (searcharealayer != undefined){
-    map.removeLayer(searcharealayer);
+var checkandremove = function(layer) {
+  if (layer != undefined) {
+    map.removeLayer(layer);
   };
 };
 
-// Searches for stops and routes within an area.
-var findwithin = function(area){
-  var dirtytrolleylist=[];
-  var dirtybuslist=[];
+// Searches for and plots stops and routes within an area.
+var findwithin = function(area) {
 
+// Finding and plotting stops
   trolleystopswithin = turf.pointsWithinPolygon(Trolley_Stop, area);
   busstopswithin = turf.pointsWithinPolygon(Bus_Stop, area);
 
-  _.each(trolleystopswithin.features, function(stop){
+  removedots(trolleystopswithin_layer);
+  trolleystopswithin_layer = [];
+
+  removedots(busstopswithin_layer);
+  busstopswithin_layer = [];
+
+  if (trolleystopswithin.features.length > 0) {
+    _.each(trolleystopswithin.features, function(stop) {
+      var marker = L.circleMarker([stop.properties.Latitude, stop.properties.Longitude], TrolleySStyle);
+      trolleystopswithin_layer.push(marker);
+    });
+  };
+  if (busstopswithin.features.length > 0) {
+    _.each(busstopswithin.features, function(stop) {
+      var marker = L.circleMarker([stop.properties.Latitude, stop.properties.Longitude], BusSStyle);
+      busstopswithin_layer.push(marker);
+    });
+  };
+
+  plotdots(trolleystopswithin_layer);
+  plotdots(busstopswithin_layer);
+
+// Finding and plotting routes
+  var dirtytrolleylist = [];
+  var dirtybuslist = [];
+  _.each(trolleystopswithin.features, function(stop) {
     dirtytrolleylist.push(stop.properties.Route);
   });
-
-  _.each(busstopswithin.features, function(stop){
+  _.each(busstopswithin.features, function(stop) {
     if (stop.properties.Route != " ") {
       dirtybuslist.push(stop.properties.Route);
     };
@@ -57,6 +93,28 @@ var findwithin = function(area){
   trolleyrouteswithin = [...new Set(dirtytrolleylist)];
   busrouteswithin = [...new Set(dirtybuslist)];
 
+  removedots(trolleyrouteswithin_layer);
+  trolleyrouteswithin_gj = [];
+  trolleyrouteswithin_layer = [];
+
+  removedots(busrouteswithin_layer);
+  busrouteswithin_gj = [];
+  busrouteswithin_layer = [];
+
+  _.each(Trolley_Route.features, function(route){
+    if (trolleyrouteswithin.includes(route.properties.Route) == true){
+      trolleyrouteswithin_gj.push(route);
+    };
+  });
+
+  _.each(Bus_Route.features, function(route){
+    if (busrouteswithin.includes(route.properties.Route) == true){
+      busrouteswithin_gj.push(route);
+    };
+  });
+
+  plotroutes(busrouteswithin_gj, busrouteswithin_layer, BusRStyle);
+  plotroutes(trolleyrouteswithin_gj, trolleyrouteswithin_layer, TrolleyRStyle);
 };
 
 
@@ -69,27 +127,22 @@ var findwithin = function(area){
 var searchandplot = function(station) {
   var token = '&access_token=pk.eyJ1IjoiYWxleDBlYXN5IiwiYSI6ImNqdmZwMmk0NDByYjg0M2t3Zm9rZW42ZHQifQ.1wZxIuUdeVjmV0dslAfdow';
   var mapboxadd = 'https://api.mapbox.com/isochrone/v1/mapbox/';
+  var thisstyle = station.sstyle;
 
-  if (searchcriteria.function=='walking') {
-    var address = mapboxadd + "walking/" + station._latlng.lng + "," + station._latlng.lat + "?contours_minutes=" + searchcriteria.radius + '&polygons=true'+ token;
+  if (searchcriteria.function != 'dis') {
+    var address = mapboxadd + searchcriteria.function+"/" + station._latlng.lng + "," + station._latlng.lat + "?contours_minutes=" + searchcriteria.radius + '&polygons=true' + token;
     $.ajax(address).done(function(o) {
-      checkandremove();
-      searcharealayer = L.geoJSON(o);
-      searcharealayer.addTo(map);
-      findwithin(o);
-    });
-  } else if (searchcriteria.function=='biking') {
-    var address = mapboxadd + "cycling/" + station._latlng.lng + "," + station._latlng.lat + "?contours_minutes=" + searchcriteria.radius + '&polygons=true'+ token;
-    $.ajax(address).done(function(o) {
-      checkandremove();
-      searcharealayer = L.geoJSON(o);
+      checkandremove(searcharealayer);
+      searcharealayer = L.geoJSON(o, thisstyle);
       searcharealayer.addTo(map);
       findwithin(o);
     });
   } else {
-    checkandremove();
-    var searcharea = turf.circle([station._latlng.lng, station._latlng.lat], 0.0003048*searchcriteria.radius, {units: 'kilometers'});
-    searcharealayer = L.geoJSON(searcharea);
+    checkandremove(searcharealayer);
+    var searcharea = turf.circle([station._latlng.lng, station._latlng.lat], 0.0003048 * searchcriteria.radius, {
+      units: 'kilometers'
+    });
+    searcharealayer = L.geoJSON(searcharea, thisstyle);
     searcharealayer.addTo(map);
     findwithin(searcharea);
   };
@@ -137,36 +190,37 @@ $('#rr_select').click(function() {
   }
 });
 
-// Range selector
-$('#range').click(function(){
+// Listener for search criteria changes
+$('#range').click(function() {
   setsearchcriteria();
 });
 
-$('#mode').click(function(){
+$('#mode').click(function() {
   setsearchcriteria();
 });
 
 // Station dots(markers) generator
-var stationpopupgenerator = function(list, feature){
-  var content="";
+var stationpopupgenerator = function(list, feature) {
+  var content = "";
   if (list == RR_Station_List) {
     if (feature.Line_Name == "Joint") {
       content = "THIS IS :" + "<br>" + feature.Station_Na + "<br>" + "Glenside Combined (SEPTA Main Line)";
     } else {
-    content = "THIS IS :" + "<br>" + feature.Station_Na + "<br>" + feature.Line_Name;
+      content = "THIS IS :" + "<br>" + feature.Station_Na + "<br>" + feature.Line_Name;
     };
   } else {
-  content = "THIS IS :" + "<br>" + feature.Station + "<br>" + feature.Route;
+    content = "THIS IS :" + "<br>" + feature.Station + "<br>" + feature.Route;
   };
   return content;
 };
 
-var stationlayergenerator =  function(list, icon){
-  var layer=[];
+var stationlayergenerator = function(list, icon) {
+  var layer = [];
   for (let k = 0; k < list.length; k++) {
     var marker = L.marker([list[k].Latitude, list[k].Longitude], {
       icon: icon
     });
+    marker.sstyle = list[k].sstyle;
     var popupcontent = stationpopupgenerator(list, list[k]);
     marker.bindPopup(popupcontent).openPopup();
     layer.push(marker);

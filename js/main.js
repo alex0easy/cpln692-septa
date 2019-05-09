@@ -28,22 +28,24 @@ var main = function() {
 
   MFL_Line_Layer.addTo(map);
   BSL_Line_Layer.addTo(map);
-  NHSL_Line_Layer.addTo(map);
-  RR_Line_Layer.addTo(map);
 
   for (let i = 0; i < MFL_Station.features.length; i++) {
+    MFL_Station.features[i].attributes.sstyle = {color: MFLColor};
     MFL_Station_List.push(MFL_Station.features[i].attributes);
   };
 
   for (let i = 0; i < BSL_Station.features.length; i++) {
+    BSL_Station.features[i].attributes.sstyle = {color: BSLColor};
     BSL_Station_List.push(BSL_Station.features[i].attributes);
   };
 
   for (let i = 0; i < NHSL_Station.features.length; i++) {
+    NHSL_Station.features[i].attributes.sstyle = {color: NHSLColor};
     NHSL_Station_List.push(NHSL_Station.features[i].attributes);
   };
 
   for (let i = 0; i < RR_Station.features.length; i++) {
+    RR_Station.features[i].attributes.sstyle = {color: RRColor};
     RR_Station_List.push(RR_Station.features[i].attributes);
   };
 
@@ -54,10 +56,8 @@ var main = function() {
   plotstations(BSL_Station_Layer);
 
   NHSL_Station_Layer = stationlayergenerator(NHSL_Station_List, NHSL_Station_Icon);
-  plotstations(NHSL_Station_Layer);
 
   RR_Station_Layer = stationlayergenerator(RR_Station_List, RR_Station_Icon);
-  plotstations(RR_Station_Layer);
 
   setsearchcriteria();
 

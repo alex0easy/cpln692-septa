@@ -12,6 +12,13 @@ var busstopswithin;
 var trolleyrouteswithin;
 var busrouteswithin;
 
+var trolleyrouteswithin_gj = [];
+var trolleystopswithin_layer=[];
+var busstopswithin_layer=[];
+var busrouteswithin_gj = [];
+var trolleyrouteswithin_layer=[];
+var busrouteswithin_layer=[];
+
 //json file addresses. Station first, then lines.
 var url = [];
 // MFL
@@ -66,7 +73,7 @@ var NHSL_Station_Layer = [];
 var RR_Station_List = [];
 var RR_Station_Layer = [];
 
-// Icons
+// Storage for rail station icons
 var MFL_Station_Icon = new L.Icon({
   iconUrl: 'markers/mfl.png',
   iconSize: [20, 32],
@@ -95,25 +102,58 @@ var RR_Station_Icon = new L.Icon({
   popupAnchor: [0, -33]
 });
 
-// Storage for rail line objects
+// Storage for rail line styles
+var MFLColor = "#007dc3";
+var BSLColor = "#ff8f1c";
+var NHSLColor = "#781d7e";
+var RRColor = "#45647b";
+
 var MFLLStyle = {
-  "color": "#007dc3",
+  "color": MFLColor,
   "weight": 5,
   "opacity": 0.6
 };
 
 var BSLLStyle = {
-  "color": "#ff8f1c",
+  "color": BSLColor,
   "weight": 5,
   "opacity": 0.6
 };
 var NHSLLStyle = {
-  "color": "#781d7e",
+  "color": NHSLColor,
   "weight": 5,
   "opacity": 0.6
 };
 var RRLStyle = {
-  "color": "#45647b",
+  "color": RRColor,
   "weight": 5,
   "opacity": 0.6
+};
+
+// Storage for trolley and bus styles
+var TrolleyColor = "#5d9731";
+var BusColor = "#222021";
+
+var TrolleySStyle = {
+  radius: 5,
+  fillColor: TrolleyColor,
+  color: TrolleyColor
+};
+
+var BusSStyle = {
+  radius: 5,
+  fillColor: BusColor,
+  color: BusColor
+};
+
+var TrolleyRStyle = {
+  "color": TrolleyColor,
+  "weight": 3,
+  "opacity": 0.8
+};
+
+var BusRStyle = {
+  "color": BusColor,
+  "weight": 3,
+  "opacity": 1
 };
