@@ -111,23 +111,19 @@ var RRColor = "#45647b";
 var MFLLStyle = {
   "color": MFLColor,
   "weight": 5,
-  "opacity": 0.6
 };
 
 var BSLLStyle = {
   "color": BSLColor,
   "weight": 5,
-  "opacity": 0.6
 };
 var NHSLLStyle = {
   "color": NHSLColor,
   "weight": 5,
-  "opacity": 0.6
 };
 var RRLStyle = {
   "color": RRColor,
   "weight": 5,
-  "opacity": 0.6
 };
 
 // Storage for trolley and bus styles
@@ -148,12 +144,12 @@ var BusSStyle = {
 
 var TrolleyRStyle = {
   "color": TrolleyColor,
-  "weight": 3,
+  "weight": 2,
   "opacity": 0.8
 };
 
 var BusRStyle = {
   "color": BusColor,
-  "weight": 3,
+  "weight": 2,
   "opacity": 1
 };
