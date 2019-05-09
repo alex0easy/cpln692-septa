@@ -1,6 +1,6 @@
 // This page deals with the interactive buttons
-// General plotting functions
-// Plotting rail stations and add trigger for search
+
+// Plotting rail stations and add trigger for search on click
 var plotstations = function(list) {
   for (let i = 0; i < list.length; i++) {
     list[i].addTo(map).on('click', function(e) {
@@ -10,7 +10,7 @@ var plotstations = function(list) {
   };
 };
 
-// Plotting and removing stuff without adding click functions
+// Plotting and removing bus stops and routes without adding click functions
 var plotdots = function(list) {
   _.each(list, function(o){
     o.addTo(map);
@@ -145,6 +145,7 @@ var generatebox = function(where, list, style){
         return "buswords";
       };
     };
+    
     var textstyle = settextstyle(style);
     boxcontent = '<div class=' + style + '><p class='+ textstyle +'><a href="#" data-id='+route.properties.Route+' id="R'+route.properties.Route+'">'+route.properties.Route + '</a><br></p><p class='+ textstyle +'notbold>' + route.properties.Route_Name + '</p></div>';
 
@@ -289,3 +290,17 @@ var stationlayergenerator = function(list, icon) {
   };
   return layer;
 };
+
+//Reset button
+$('#resetbutton').click(function() {
+  checkandremove(highlighted_layer);
+  checkandremove(searcharealayer);
+  removedots(trolleystopswithin_layer);
+  removedots(busstopswithin_layer);
+  removedots(trolleyrouteswithin_layer);
+  removedots(busrouteswithin_layer);
+  $('#trolleyboxes').empty();
+  $('#busboxes').empty();
+  $('#searchresulttally').hide();
+  $('#defaultresult').show();
+});
