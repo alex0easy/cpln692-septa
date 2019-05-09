@@ -57,7 +57,6 @@ var findwithin = function(area){
   trolleyrouteswithin = [...new Set(dirtytrolleylist)];
   busrouteswithin = [...new Set(dirtybuslist)];
 
-
 };
 
 
