@@ -133,12 +133,7 @@ var changeresult = function(){
   $('#defaultresult').hide();
 };
 
-/*
-<div class='criteriabox'>
-  You are searching within <br>
-  <label id='searchdisplay' class='criteria'>0</label>
-</div>
-*/
+// Generates the result boxes we see.
 var generatebox = function(where, list, style){
   $(where).empty();
   _.each(list, function(route){
@@ -151,10 +146,39 @@ var generatebox = function(where, list, style){
       };
     };
     var textstyle = settextstyle(style);
+    boxcontent = '<div class=' + style + '><p class='+ textstyle +'><a href="#" data-id='+route.properties.Route+' id="R'+route.properties.Route+'">'+route.properties.Route + '</a><br></p><p class='+ textstyle +'notbold>' + route.properties.Route_Name + '</p></div>';
 
-    boxcontent = '<div class=' + style + '><p class='+ textstyle +'>' + route.properties.Route + '<br></p><p class='+ textstyle +'notbold>' + route.properties.Route_Name + '</p></div>';
     $(where).append(boxcontent);
   });
+
+  _.each(list, function(route){
+    var id = '#R' + route.properties.Route
+    $(id).on('click', function () {
+      routetobehighlighted= $(this).data('id');
+      highlightroute(routetobehighlighted);
+    });
+  });
+};
+
+// Highlights selected route on click.
+var highlightroute = function (rnumber){
+  checkandremove(highlighted_layer);
+  highlighted_layer_gj=[];
+
+  _.each(trolleyrouteswithin_gj, function(route){
+    if (route.properties.Route == rnumber) {
+      highlighted_layer_gj.push(route);
+    };
+  });
+
+  _.each(busrouteswithin_gj, function(route){
+    if (route.properties.Route == rnumber) {
+      highlighted_layer_gj.push(route);
+    };
+  });
+
+  highlighted_layer = L.geoJSON(highlighted_layer_gj, HighlightStyle);
+  highlighted_layer.addTo(map);
 
 };
 
@@ -168,12 +192,14 @@ var searchandplot = function(station) {
   if (searchcriteria.function != 'dis') {
     var address = mapboxadd + searchcriteria.function+"/" + station._latlng.lng + "," + station._latlng.lat + "?contours_minutes=" + searchcriteria.radius + '&polygons=true' + token;
     $.ajax(address).done(function(o) {
+      checkandremove(highlighted_layer);
       checkandremove(searcharealayer);
       searcharealayer = L.geoJSON(o, thisstyle);
       searcharealayer.addTo(map);
       findwithin(o);
     });
   } else {
+    checkandremove(highlighted_layer);
     checkandremove(searcharealayer);
     var searcharea = turf.circle([station._latlng.lng, station._latlng.lat], 0.0003048 * searchcriteria.radius, {
       units: 'kilometers'

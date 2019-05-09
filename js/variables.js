@@ -19,6 +19,9 @@ var busrouteswithin_gj = [];
 var trolleyrouteswithin_layer=[];
 var busrouteswithin_layer=[];
 
+var routetobehighlighted;
+var highlighted_layer;
+var highlighted_layer_gj=[];
 //json file addresses. Station first, then lines.
 var url = [];
 // MFL
@@ -62,7 +65,6 @@ var RR_Line_Layer;
 
 var MFL_Station_List = [];
 var MFL_Station_Layer = [];
-
 
 var BSL_Station_List = [];
 var BSL_Station_Layer = [];
@@ -152,4 +154,9 @@ var BusRStyle = {
   "color": BusColor,
   "weight": 2,
   "opacity": 1
+};
+
+var HighlightStyle = {
+  "color": '#ff0000',
+  "weight": 3
 };
