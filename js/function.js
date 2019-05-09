@@ -38,7 +38,7 @@ var setsearchcriteria = function() {
     $('#searchdisplay').text(searchcriteria.radius + " feet around a station.");
   } else {
     searchcriteria.radius = $('#range').val();
-    $('#searchdisplay').text(searchcriteria.radius + " minutes of " + searchcriteria.function+" distance around a station.");
+    $('#searchdisplay').text(searchcriteria.radius + " minutes of " + searchcriteria.function+" distance from a station.");
   }
 };
 
@@ -49,7 +49,8 @@ var checkandremove = function(layer) {
   };
 };
 
-// Searches for and plots stops and routes within an area.
+// Searches for and plots stops and routes within a given search area,
+// and display the results to the sidebar.
 var findwithin = function(area) {
 
 // Finding and plotting stops
@@ -68,6 +69,7 @@ var findwithin = function(area) {
       trolleystopswithin_layer.push(marker);
     });
   };
+
   if (busstopswithin.features.length > 0) {
     _.each(busstopswithin.features, function(stop) {
       var marker = L.circleMarker([stop.properties.Latitude, stop.properties.Longitude], BusSStyle);
@@ -115,15 +117,49 @@ var findwithin = function(area) {
 
   plotroutes(busrouteswithin_gj, busrouteswithin_layer, BusRStyle);
   plotroutes(trolleyrouteswithin_gj, trolleyrouteswithin_layer, TrolleyRStyle);
+
+// Changes text in the tally box
+  changeresult();
+// Generates the boxes
+  generatebox('#trolleyboxes', trolleyrouteswithin_gj, "trolleybox");
+  generatebox('#busboxes', busrouteswithin_gj, 'busbox');
 };
 
+// Changes text in result box.
+var changeresult = function(){
+  $('#notrolley').text(trolleyrouteswithin.length + " trolley");
+  $('#nobus').text(busrouteswithin.length + " bus");
+  $('#searchresulttally').show();
+  $('#defaultresult').hide();
+};
 
-/* This function:
-    1. Finds the search area.
-    2. Finds the trolley and bus stops within the search area (by using the function above).
-    3. Finds the routes that go throught these stops.
-    4. Adds the stops and routes to map.
+/*
+<div class='criteriabox'>
+  You are searching within <br>
+  <label id='searchdisplay' class='criteria'>0</label>
+</div>
 */
+var generatebox = function(where, list, style){
+  $(where).empty();
+  _.each(list, function(route){
+    var boxcontent;
+    var settextstyle = function (style) {
+      if (style=="trolleybox") {
+        return "trolleywords";
+      } else {
+        return "buswords";
+      };
+    };
+    var textstyle = settextstyle(style);
+
+    boxcontent = '<div class=' + style + '><p class='+ textstyle +'>' + route.properties.Route + '<br></p><p class='+ textstyle +'notbold>' + route.properties.Route_Name + '</p></div>';
+    $(where).append(boxcontent);
+  });
+
+};
+
+// This function calculates the search area and
+// calls the function above
 var searchandplot = function(station) {
   var token = '&access_token=pk.eyJ1IjoiYWxleDBlYXN5IiwiYSI6ImNqdmZwMmk0NDByYjg0M2t3Zm9rZW42ZHQifQ.1wZxIuUdeVjmV0dslAfdow';
   var mapboxadd = 'https://api.mapbox.com/isochrone/v1/mapbox/';

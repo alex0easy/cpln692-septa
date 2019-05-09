@@ -135,13 +135,13 @@ var TrolleyColor = "#5d9731";
 var BusColor = "#222021";
 
 var TrolleySStyle = {
-  radius: 5,
+  radius: 3,
   fillColor: TrolleyColor,
   color: TrolleyColor
 };
 
 var BusSStyle = {
-  radius: 5,
+  radius: 3,
   fillColor: BusColor,
   color: BusColor
 };

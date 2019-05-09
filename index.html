@@ -7,67 +7,78 @@
 </head>
 
 <body>
+  <div class='wrapper'>
 
   <!--Left Panel-->
-  <div id="sidebar">
+  <div id="sidebar" class='leftContent'>
     <div id='loading' class="alert alert-warning">Please wait while we load data.<br>This might take a few minutes.</div>
 
     <div id="sidebarcontent">
 
-    <div id="helparea">
-      <p>
-        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          Help
-        </button>
-      </p>
-      <div class="collapse" id="collapseExample">
-        <div class="helpbox">
-          1. Chooose your preferred connection mode with the dropdown menu, or search by distance directly.<br>
-          2. Drag the slider to change search radius in minutes or search distance.<br>
-          3. Click on a station to view nearby lines.<br>
-          4. You can toggle systems displayed with the checkboxes below.<br>
-          5. Do not search for excessively large areas within Center City, or the webpage may become very slow.
+      <div id="helparea">
+        <p>
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Help
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="helpbox">
+            1. Chooose your preferred connection mode with the dropdown menu, or search by distance directly. Maximum supported distance is 25 minutes or 2500 feet.<br>
+            2. Drag the slider to change search radius in minutes or search distance.<br>
+            3. Click on a station to view nearby lines.<br>
+            4. You can toggle systems displayed with the checkboxes below.<br>
+            5. Do not search for excessively large areas, or the webpage may become very slow.<br>
+            6. Scroll with mousewheel on the left.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div id='railselector' class='railselector'><label class='showstationson'>Show Stations on:</label><br>
-        <input type="checkbox" id="mfl_select" checked='checked'> <label class="MFL_Words"> Market-Frankford Line </label><br>
-        <input type="checkbox" id="bsl_select" checked='checked'> <label class="BSL_Words">Broad Street Line</label><br>
-        <input type="checkbox" id="nhsl_select"> <label class="NHSL_Words">Norristown Highspeed Line</label><br>
-        <input type="checkbox" id="rr_select"> <label class="RRL_Words">Regional Rail Lines</label><br>
-    </div>
-    <br>
-    <div class='railselector'>
-      <label class='showstationson'>
-        Select Your Connection Mode and Time:<br>
-      </label>
-
-      <div id='selectionzone'>
-        <select id='mode'>
-          <option value="walking">Walking</option>
-          <option value="cycling">Cycling</option>
-          <option value="dis">Direct Distance</option>
-        </select>
+      <div id='railselector' class='railselector'><label class='showstationson'>Show Stations on:</label><br>
+          <input type="checkbox" id="mfl_select" checked='checked'> <label class="MFL_Words"> Market-Frankford Line </label><br>
+          <input type="checkbox" id="bsl_select" checked='checked'> <label class="BSL_Words">Broad Street Line</label><br>
+          <input type="checkbox" id="nhsl_select"> <label class="NHSL_Words">Norristown Highspeed Line</label><br>
+          <input type="checkbox" id="rr_select"> <label class="RRL_Words">Regional Rail Lines</label><br>
       </div>
-      <br>
-      <div class="slidecontainer">
-        <input type="range" min="1" max="25" value="10" class="slider" id="range">
+        <br>
+
+      <div class='railselector' id="criteriaselector">
+        <label class='showstationson'>
+          Select Your Connection Mode and Time:<br>
+        </label>
+
+        <div id='selectionzone'>
+          <select id='mode'>
+            <option value="walking">Walking</option>
+            <option value="cycling">Cycling</option>
+            <option value="dis">Direct Distance</option>
+          </select>
+        </div>
+        <br>
+        <div class="slidecontainer">
+          <input type="range" min="1" max="25" value="10" class="slider" id="range">
+        </div>
+        <br>
+        <div class='criteriabox'>
+          You are searching within <br>
+          <label id='searchdisplay' class='criteria'>0</label>
+        </div>
       </div>
-      </br>
 
+      <div class="railselector">
+        <label id='defaultresult'>Click on a station to search for trolley and bus connections nearby.</label>
+        <label id='searchresulttally'>We found <label id="notrolley" class='trolleywords'>0</label> and <label id='nobus' class='buswords'>0</label> routes within the connection area.</label>
+      </div>
 
-    <div class='criteriabox'>
-      You are searching within <br>
-      <label id='searchdisplay' class='criteria'>0</label>
-    </div>
-    </div>
-
+      <div id="trolleyboxes">
+      </div>
+      <div id="busboxes">
+      </div>
+  </div>
   </div>
 
 
   <!-- Map -->
-  <div id="map" style="position: absolute; right: 0; left: 400px; top: 0; bottom: 0;"></div>
+  <div id="map" style="position: absolute; right: 0; left: 400px; top: 0; bottom: 0;" class="RightContent"></div>
 
   <!--CSS-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -84,6 +95,7 @@
   <script src="js/variables.js"></script>
   <script src='js/function.js'></script>
   <script src="js/main.js"></script>
+</div>
 </body>
 
 </html>

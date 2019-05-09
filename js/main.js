@@ -13,6 +13,8 @@ var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/
 // This function builds the page and runs on page startup,
 // and does not respond to the interactive buttons.
 var main = function() {
+  $('#searchresulttally').hide();
+
   MFL_Line_Layer = L.geoJSON(MFL_Line, {
     style: MFLLStyle
   });

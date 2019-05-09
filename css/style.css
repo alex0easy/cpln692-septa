@@ -47,10 +47,27 @@
   padding: 5px;
 }
 
+.trolleybox {
+  width: 380px;
+  margin: 5px;
+  border: 3px solid #5d9731;
+  padding: 5px;
+}
+
+.busbox {
+  width: 380px;
+  margin: 5px;
+  border: 3px solid #222021;
+  padding: 5px;
+}
+
 .showstationson {
   font-weight: bold;
 }
 
+.static {
+  position: fixed;
+}
 .MFL_Words {
   color:  #007dc3;
 }
@@ -67,6 +84,70 @@
   color:  #45647b;
 }
 
+.trolleywords {
+  color:  #5d9731;
+  font-weight: bold;
+}
+
+.trolleywordsnotbold {
+  color:  #5d9731;
+}
+
+.buswords {
+  color:  #222021;
+  font-weight: bold;
+}
+
+.buswordsnotbold {
+  color:  #222021;
+}
+
 .criteria {
   color: Maroon;
+}
+
+html, body, .Container
+{
+    height: 100%;
+}
+
+    .Container:before
+    {
+        content: '';
+        height: 100%;
+        float: left;
+    }
+
+.Content
+{
+    position: relative;
+    z-index: 1;
+}
+    .Content:after
+    {
+        content: '';
+        clear: both;
+        display: block;
+    }
+
+.Wrapper
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+    .Wrapper > div
+    {
+        height: 100%;
+    }
+
+.LeftContent
+{
+    overflow: auto;
+}
+
+.RightContent
+{
+    float: right;
+    margin-left: 10px;
 }
