@@ -14,13 +14,13 @@
 
     <div id='loading' class="alert alert-warning">Please wait while we load data.<br>This might take a few minutes.</div>
 
-    <div id="sidebarcontent" >
+    <div id="sidebarcontent" style ="display:none;">
       <div class="alert alert-info">
         <img src="markers/SEPTA.png" width="20" height="20" hspace="2">
-        <label class='showstationson'>SEPTA Rail Station Connection Mapper</label>
+        <label style = "margin:auto;"}>SEPTA Rail Station Connection Mapper</label>
       </div>
-      <div id="helparea">
-        <div class="btn-group" role="group" aria-label="Basic example">
+      <div id="helparea" class="buttonarea">
+        <div class="btn-group" role="group" aria-label="Basic example" class="buttonarea2">
           <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#helptext" aria-expanded="false" aria-controls="helptext">
             Toggle Help
           </button>
@@ -41,8 +41,7 @@
             4. Click on a station to perform a search and view trolley or bus lines within the search area.<br>
             5. Click on the route number of a line to highlight it on the map.<br>
             6. You can toggle rail systems displayed with the checkboxes below.<br>
-            7. Do not search for excessively large areas, especially in Center City, or the webpage may become very slow.<br>
-            8. Scroll with mousewheel on the left.
+            7. Do not search for excessively large areas, especially in Center City, or the webpage may become very slow.
           </div>
         </div>
         <div class="collapse" id="infotext">
@@ -93,7 +92,7 @@
       </div>
       <div class="railselector">
         <label id='defaultresult'>Click on a station to search for trolley and bus connections nearby.</label>
-        <label id='searchresulttally'>We found <label id="notrolley" class='trolleywords'>0</label> and <label id='nobus' class='buswords'>0</label> routes within the connection area.</label>
+        <label id='searchresulttally' style ="display:none;">We found <label id="notrolley" class='trolleywords'>0</label> and <label id='nobus' class='buswords'>0</label> routes within the connection area.</label>
       </div>
 
       <div id="trolleyboxes">

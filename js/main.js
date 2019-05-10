@@ -24,8 +24,6 @@ map.on('zoomend', function() {
 // This function builds the page and runs once on page startup,
 // and does not respond to the interactive buttons.
 var main = function() {
-  $('#searchresulttally').hide();
-
   MFL_Line_Layer = L.geoJSON(MFL_Line, {
     style: MFLLStyle
   });
@@ -78,7 +76,6 @@ var main = function() {
 
 // Actual page building on load
 $(document).ready(function() {
-  $('#sidebarcontent').hide();
 
   var ajaxcalls = url.map(function (url){
     return $.getJSON(url);

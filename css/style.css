@@ -35,6 +35,10 @@
   padding: 10px;
 }
 
+.pagetitle {
+  margin: auto;
+}
+
 .helpbox {
   width: 380px;
   margin: 5px;
@@ -144,6 +148,16 @@ html, body, .Container
     position: absolute;
     left: 0px;
     width: 410px;
+}
+
+.buttonarea
+{
+    margin: 2px;
+}
+
+.buttonarea2
+{
+    margin: 5px;
 }
 
 .RightContent
