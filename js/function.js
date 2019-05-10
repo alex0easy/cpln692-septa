@@ -346,7 +346,9 @@ $('#resetbutton').click(function() {
   checkandremove(highlighted_layer);
   checkandremove(searcharealayer);
   removedots(trolleystopswithin_layer);
+  trolleystopswithin_layer = [];
   removedots(busstopswithin_layer);
+  busstopswithin_layer = [];
   removedots(trolleyrouteswithin_layer);
   removedots(busrouteswithin_layer);
   $('#trolleyboxes').empty();
