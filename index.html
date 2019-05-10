@@ -11,37 +11,55 @@
 
   <!--Left Panel-->
   <div id="sidebar" class='leftContent'>
+
     <div id='loading' class="alert alert-warning">Please wait while we load data.<br>This might take a few minutes.</div>
 
-    <div id="sidebarcontent">
-
+    <div id="sidebarcontent" >
+      <div class="alert alert-info">
+        <img src="markers/SEPTA.png" width="20" height="20" hspace="2">
+        <label class='showstationson'>SEPTA Rail Station Connection Mapper</label>
+      </div>
       <div id="helparea">
-        <p>
-          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            Help
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#helptext" aria-expanded="false" aria-controls="helptext">
+            Toggle Help
           </button>
           <button class="btn btn-light" type="button" id='resetbutton'>
             Clear Map
           </button>
-        </p>
-        <div class="collapse" id="collapseExample">
+          <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#infotext" aria-expanded="false" aria-controls="infotext">
+            Source & Disclaimer
+          </button>
+        </div>
+        <div class="collapse" id="helptext">
           <div class="helpbox">
             1. Choose your preferred connection mode with the dropdown menu, or search by distance directly. Maximum supported distance is 25 minutes or 2500 feet.<br>
             2. Drag the slider to change search radius in minutes or search distance.<br>
-            3. Click on a station to view trolley or bus lines within the search area.<br>
-            4. Click on the route number of a line to highlight it on the map.<br>
-            5. You can toggle rail systems displayed with the checkboxes below.<br>
-            6. Do not search for excessively large areas, or the webpage may become very slow.<br>
-            7. Scroll with mousewheel on the left.
+            3. You can choose to ignore connecting lines that have no services on certain days.
+            For example, checking the Sunday box would ignore all routes that have no service on Sundays,
+            even if the route passes through the search area. Unchecking the box means the routes will NOT be filtered by Sunday service.<br>
+            4. Click on a station to perform a search and view trolley or bus lines within the search area.<br>
+            5. Click on the route number of a line to highlight it on the map.<br>
+            6. You can toggle rail systems displayed with the checkboxes below.<br>
+            7. Do not search for excessively large areas, especially in Center City, or the webpage may become very slow.<br>
+            8. Scroll with mousewheel on the left.
+          </div>
+        </div>
+        <div class="collapse" id="infotext">
+          <div class="helpbox">
+            <a class="nav-link active" href=http://www.septa.org target="_blank">SEPTA Home Page</a>
+            <a class="nav-link active" href=http://septaopendata-septa.opendata.arcgis.com target="_blank">Data Source</a>
+            <label class="nav-link disabled">Map for entertainment purposes only.
+              I share no responsibility if you go railfanning and get stranded.</label>
           </div>
         </div>
       </div>
 
       <div id='railselector' class='railselector'><label class='showstationson'>Show Stations on:</label><br>
-          <input type="checkbox" id="mfl_select" checked='checked'> <label class="MFL_Words"> Market-Frankford Line </label><br>
-          <input type="checkbox" id="bsl_select" checked='checked'> <label class="BSL_Words">Broad Street Line</label><br>
-          <input type="checkbox" id="nhsl_select"> <label class="NHSL_Words">Norristown Highspeed Line</label><br>
-          <input type="checkbox" id="rr_select"> <label class="RRL_Words">Regional Rail Lines</label><br>
+          <input type="checkbox" id="mfl_select" checked='checked'> <label class="MFL_Words" for="mfl_select"> Market-Frankford Line </label><br>
+          <input type="checkbox" id="bsl_select" checked='checked'> <label class="BSL_Words" for='bsl_select'>Broad Street Line</label><br>
+          <input type="checkbox" id="nhsl_select"> <label class="NHSL_Words" for='nhsl_select'>Norristown Highspeed Line</label><br>
+          <input type="checkbox" id="rr_select"> <label class="RRL_Words" for='rr_select'>Regional Rail Lines</label><br>
       </div>
       <div class='railselector' id="criteriaselector">
         <label class='showstationson'>
@@ -64,8 +82,15 @@
           You are searching within <br>
           <label id='searchdisplay' class='criteria'>0</label>
         </div>
+        <div class='criteriabox'>
+          <div>
+              <label>Ignore trolley/bus lines that have no service on:</label><br>
+              <input type="checkbox" id="weekday_select" checked='checked'> <label for="weekday_select"> Weekdays </label><br>
+              <input type="checkbox" id="saturday_select"> <label for="saturday_select"> Saturdays </label><br>
+              <input type="checkbox" id="sunday_select"> <label for='sunday_select'> Sundays </label><br>
+          </div>
+        </div>
       </div>
-      <br>
       <div class="railselector">
         <label id='defaultresult'>Click on a station to search for trolley and bus connections nearby.</label>
         <label id='searchresulttally'>We found <label id="notrolley" class='trolleywords'>0</label> and <label id='nobus' class='buswords'>0</label> routes within the connection area.</label>
