@@ -141,6 +141,9 @@ html, body, .Container
 .LeftContent
 {
     overflow: auto;
+    position: absolute;
+    left: 0px;
+    width: 410px;
 }
 
 .RightContent

@@ -13,7 +13,7 @@ var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/
 map.on('zoomend', function() {
     if (map.getZoom() < 14){
       removedots(trolleystopswithin_layer);
-      removedots(busstopswithin_layer)
+      removedots(busstopswithin_layer);
     };
     if (map.getZoom() >= 14){
       plotdots(trolleystopswithin_layer);
@@ -76,6 +76,37 @@ var main = function() {
 
 };
 
+// Actual page building on load
+$(document).ready(function() {
+  $('#sidebarcontent').hide();
+
+  var ajaxcalls = url.map(function (url){
+    return $.getJSON(url);
+  });
+
+  $.when.apply(null, ajaxcalls).done(function(MFL_S, MFL_L, BSL_S, BSL_L, NHSL_S, NHSL_L, RR_S, RR_L, Trolley_S, Trolley_R, Bus_S, Bus_R){
+    MFL_Station = MFL_S[0];
+    MFL_Line = MFL_L[0];
+    BSL_Station = BSL_S[0];
+    BSL_Line = BSL_L[0];
+    NHSL_Station = NHSL_S[0];
+    NHSL_Line = NHSL_L[0];
+    RR_Station = RR_S[0];
+    RR_Line = RR_L[0];
+    Trolley_Stop = Trolley_S[0];
+    Trolley_Route = Trolley_R[0];
+    Bus_Stop = Bus_S[0];
+    Bus_Route = Bus_R[0];
+
+    $('#loading').hide();
+    $('#sidebarcontent').show();
+    main();
+  });
+});
+
+
+
+/*
 
 // Actual page building on load
 $(document).ready(function() {
@@ -121,3 +152,4 @@ $(document).ready(function() {
   });
 
 });
+*/
