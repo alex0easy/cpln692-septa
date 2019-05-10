@@ -126,8 +126,10 @@ var findwithin = function(area) {
     });
   };
 
-  plotdots(trolleystopswithin_layer);
-  plotdots(busstopswithin_layer);
+  if (map.getZoom() >= 14){
+    plotdots(trolleystopswithin_layer);
+    plotdots(busstopswithin_layer);
+  };
 
   // Finding and plotting routes
   var dirtytrolleylist = [];

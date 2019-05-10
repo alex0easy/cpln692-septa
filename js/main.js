@@ -1,7 +1,7 @@
 // Set up map
 var map = L.map('map', {
   center: [39.953337, -75.177357],
-  zoom: 12.65
+  zoom: 13
 });
 
 var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -10,7 +10,18 @@ var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/
   maxZoom: 19
 }).addTo(map);
 
-// This function builds the page and runs on page startup,
+map.on('zoomend', function() {
+    if (map.getZoom() < 14){
+      removedots(trolleystopswithin_layer);
+      removedots(busstopswithin_layer)
+    };
+    if (map.getZoom() >= 14){
+      plotdots(trolleystopswithin_layer);
+      plotdots(busstopswithin_layer);
+    };
+});
+
+// This function builds the page and runs once on page startup,
 // and does not respond to the interactive buttons.
 var main = function() {
   $('#searchresulttally').hide();
